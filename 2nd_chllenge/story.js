@@ -1,12 +1,7 @@
 // 1. Declare variables and capture input.
-const verbInput = prompt("Enter a verb");
-const verb = verbInput;
-
-const adjectiveInput = prompt("Enter an adjective");
-const adjective = adjectiveInput;
-
-const nounInput = prompt("Enter a noun");
-const noun = nounInput;
+const verb = prompt("Enter a verb");
+const adjective = prompt("Enter an adjective");
+const noun = prompt("Enter a noun");
 
 
 // 2. Combine the input with other words to create a story.
