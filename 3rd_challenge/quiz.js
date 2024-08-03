@@ -6,7 +6,7 @@ let correctAnswers = 0;
 
 // 2. Store the rank of a player
 
-let playerRank = " ";
+let playerRank;
 
 // 3. Select the <main> HTML element
 const mainElement = document.querySelector("main");
@@ -50,9 +50,9 @@ if (questionFive.toUpperCase() === "LISBON") {
 */
 if (correctAnswers === 5) {
   playerRank = "Gold";
-} else if (correctAnswers === 4 || correctAnswers === 3) {
+} else if (correctAnswers >= 3) {
   playerRank = "Silver";
-} else if (correctAnswers === 2 || correctAnswers === 1) {
+} else if (correctAnswers >= 1) {
   playerRank = "Bronze";
 } else {
   playerRank = "No crown";
@@ -61,4 +61,5 @@ if (correctAnswers === 5) {
 // 6. Output results to the <main> element
 mainElement.innerHTML = `
   <h2>You got ${correctAnswers} out of 5 questions correct.</h2>
-  <p>Crown earned: <strong>${playerRank}</strong></p>`
+  <p>Crown earned: <strong>${playerRank}</strong></p>
+`
