@@ -11,22 +11,21 @@ const mainElement = document.querySelector('main');
 /**
  * It generates a random number between two numbers provided by the user.
  *
- * @param {number} userNumberLow - Lower number
- * @param {number} userNumberHigh - Higher number
+ * @param {number} lower - The lowest number value.
+ * @param {number} upper - The highest number value.
  * @returns {string} Message with random number between lower and higher number or error message.
  */
 
-
-function getRandom(userNumberLow, userNumberHigh) {
+function getRandom(lower, upper) {
   let message = ``;
 
-  if (userNumberLow && userNumberHigh && userNumberLow < userNumberHigh) {
-    const randomNumber = Math.floor(Math.random() * (userNumberHigh - userNumberLow + 1)) + userNumberLow;
-    message = `<p>${randomNumber} is random number between ${userNumberLow} and ${userNumberHigh}</p>`;
-  } else if (userNumberLow && userNumberHigh && userNumberLow > userNumberHigh) {
-    message = `<p>${userNumberHigh} is lower than ${userNumberLow}, please try again</p>`;
-  } else if (userNumberLow && userNumberHigh && userNumberLow === userNumberHigh) {
-    message = `<p>${userNumberHigh} is equal to ${userNumberLow}, please try again</p>`;
+  if (lower && upper && lower < upper) {
+    const randomNumber = Math.floor(Math.random() * (upper - lower + 1)) + lower;
+    message = `<p>${randomNumber} is random number between ${lower} and ${upper}</p>`;
+  } else if (lower && upper && lower > upper) {
+    message = `<p>${upper} is lower than ${lower}, please try again</p>`;
+  } else if (lower && upper && lower === upper) {
+    message = `<p>${upper} is equal to ${lower}, please try again</p>`;
   } else {
     message = `<p>Error! Both inputs must be numbers.</p>`;
   }
