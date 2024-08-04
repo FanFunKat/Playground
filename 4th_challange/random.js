@@ -13,7 +13,7 @@ const mainElement = document.querySelector('main');
  *
  * @param {number} userNumberLow - Lower number
  * @param {number} userNumberHigh - Higher number
- * @returns {number} random number between lower number and higher number
+ * @returns {string} Message with random number between lower and higher number or error message.
  */
 
 
