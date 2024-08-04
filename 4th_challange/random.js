@@ -5,7 +5,17 @@
 // Convert the inputs to a number
 // const userNumberLow = parseInt(userInputLow);
 // const userNumberHigh = parseInt(userInputHigh);
+
 const mainElement = document.querySelector('main');
+
+/**
+ * It generates a random number between two numbers provided by the user.
+ *
+ * @param {number} userNumberLow - Lower number
+ * @param {number} userNumberHigh - Higher number
+ * @returns {number} random number between lower number and higher number
+ */
+
 
 function getRandom(userNumberLow, userNumberHigh) {
   let message = ``;
