@@ -27,8 +27,8 @@ function getRandom(lower, upper) {
 // while loop
 let counter = 0;
 
-while (counter < 10) {
-  console.log(`While - the random number is ${getRandom(1, 10)}`);
+while (counter < 5) {
+  console.log(`While - the random number is ${getRandom(1, 50)}`);
   counter++;
 }
 
@@ -36,6 +36,11 @@ while (counter < 10) {
 let counter2 = 0;
 
 do {
-  console.log(`DoWhile - The random number is ${getRandom(10, 20)}`);
+  console.log(`DoWhile - The random number is ${getRandom(51, 100)}`);
   counter2++;
-} while (counter2 < 10);
+} while (counter2 < 5);
+
+// for loop
+for (let i = 0; i < 5; i++) {
+  console.log(`For - The random number is ${getRandom(101, 150)}`);
+}
