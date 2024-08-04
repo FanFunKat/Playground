@@ -14,12 +14,19 @@ function getRandom(lower, upper) {
   }
 }
 
-const mainElement = document.querySelector('main');
-const minNumber = parseInt(prompt("Please provide your lowest number"));
-const maxNumber = parseInt(prompt("Please provide your highest number"));
+// const mainElement = document.querySelector('main');
+// const minNumber = parseInt(prompt("Please provide your lowest number"));
+// const maxNumber = parseInt(prompt("Please provide your highest number"));
 
-if (isNaN(minNumber) || isNaN(maxNumber)) {
-  mainElement.innerHTML = `<p>Please provide valid numbers.</p>`;
-} else {
-  mainElement.innerHTML = `<p>${getRandom(minNumber, maxNumber)} is random number between ${minNumber} and ${maxNumber}</p>`;
+// if (isNaN(minNumber) || isNaN(maxNumber)) {
+//   mainElement.innerHTML = `<p>Please provide valid numbers.</p>`;
+// } else {
+//   mainElement.innerHTML = `<p>${getRandom(minNumber, maxNumber)} is random number between ${minNumber} and ${maxNumber}</p>`;
+// }
+
+let counter = 0;
+
+while (counter < 10) {
+  console.log(getRandom(1, 100));
+  counter++;
 }
