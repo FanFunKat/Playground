@@ -1,13 +1,13 @@
 let html = '';
-let randomRGB;
+const randomValue = () => Math.floor(Math.random() * 256);
 
-function randomRGBNumber() {
-  return Math.floor(Math.random() * 256);
+function randomRGB(value) {
+  const color = `rgb(${value()}, ${value()}, ${value()})`;
+  return color;
 }
 
 for (let i = 1; i <= 100; i++) {
-  randomRGB = `rgb( ${randomRGBNumber()}, ${randomRGBNumber()}, ${randomRGBNumber()} )`;
-  html += `<div style="background-color: ${randomRGB}">${i}</div>`;
+  html += `<div style="background-color: ${randomRGB(randomValue)}">${i}</div>`;
 }
 
 document.querySelector('main').innerHTML = html;
