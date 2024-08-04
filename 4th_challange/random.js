@@ -24,9 +24,18 @@ function getRandom(lower, upper) {
 //   mainElement.innerHTML = `<p>${getRandom(minNumber, maxNumber)} is random number between ${minNumber} and ${maxNumber}</p>`;
 // }
 
+// while loop
 let counter = 0;
 
 while (counter < 10) {
-  console.log(getRandom(1, 100));
+  console.log(`While - the random number is ${getRandom(1, 10)}`);
   counter++;
 }
+
+// do while loop
+let counter2 = 0;
+
+do {
+  console.log(`DoWhile - The random number is ${getRandom(10, 20)}`);
+  counter2++;
+} while (counter2 < 10);
