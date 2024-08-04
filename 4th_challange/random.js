@@ -6,7 +6,6 @@
 // const userNumberLow = parseInt(userInputLow);
 // const userNumberHigh = parseInt(userInputHigh);
 const mainElement = document.querySelector('main');
-const message = "coś";
 
 function getRandom(userNumberLow, userNumberHigh) {
   let message = ``;
