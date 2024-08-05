@@ -1,9 +1,9 @@
 // 1. Create a multidimensional array to hold quiz questions and answers
 
 const quiz = [
-  ["What has keys but can't open locks?", "A piano"],
-  ["I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?", "An echo"],
-  ["I'm tall when I'm young, and I'm short when I'm old. What am I?", "A candle"]
+  ["What has keys but can't open locks?", "a piano"],
+  ["I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?", "an echo"],
+  ["I'm tall when I'm young, and I'm short when I'm old. What am I?", "a candle"]
 ];
 
 
@@ -18,9 +18,14 @@ let correctAnswers = 0;
         answered questions increments by 1
 */
 
-for (let i = 0; i < quiz.length; i++)
+for (let i = 0; i < quiz.length; i++) {
+  const question = prompt(quiz[i][0]);
+  if (quiz[i][1] === question.toLowerCase()) {
+    correctAnswers++
+  };
+}
 
 
-  // 4. Display the number of correct answers to the user
-  message = `<p>You got ${correctAnswers} question(s) correct</p>`
+// 4. Display the number of correct answers to the user
+message = `<p>You got <strong>${correctAnswers}</strong> question(s) correct</p>`
 document.querySelector('main').innerHTML = `${message}`
