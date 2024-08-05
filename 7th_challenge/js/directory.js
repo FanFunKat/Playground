@@ -1,11 +1,12 @@
 let message = ``
 
 for (let i = 0; i < pets.length; i++) {
+  let pet = pets[i]
   message += `
-    <h2>${pets[i].name}</h2>
-    <h3>${pets[i].type} | ${pets[i].breed}</h3>
-    <p>Age: ${pets[i].age}</p>
-    <img src="${pets[i].photo}" alt="${pets[i].breed}"></img>
+    <h2>${pet.name}</h2>
+    <h3>${pet.type} | ${pet.breed}</h3>
+    <p>Age: ${pet.age}</p>
+    <img src="${pet.photo}" alt="${pet.breed}"></img>
   `
 }
 
