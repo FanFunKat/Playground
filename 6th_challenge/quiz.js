@@ -8,7 +8,7 @@ const quiz = [
 
 
 // 2. Store the number of questions answered correctly
-const correctAnswers = 0;
+let correctAnswers = 0;
 
 /*
   3. Use a loop to cycle through each question
@@ -18,7 +18,9 @@ const correctAnswers = 0;
         answered questions increments by 1
 */
 
+for (let i = 0; i < quiz.length; i++)
 
-// 4. Display the number of correct answers to the user
-message = `<p>You got ${correctAnswers} question(s) correct</p>`
+
+  // 4. Display the number of correct answers to the user
+  message = `<p>You got ${correctAnswers} question(s) correct</p>`
 document.querySelector('main').innerHTML = `${message}`
