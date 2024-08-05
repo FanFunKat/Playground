@@ -9,7 +9,11 @@ Small and larger projects related to various educational platforms. So that I wo
 
 3rd challenge - quiz - if statement
 
-4th challenge - refactoring the code
+4th challenge - random number
 
-5th challange - quiz - array
+5th challenge - refactoring the code
+
+6th challange - quiz - array
+
+7th challenge - pet profiles
 
