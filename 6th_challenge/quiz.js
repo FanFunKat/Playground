@@ -1,9 +1,18 @@
 // 1. Create a multidimensional array to hold quiz questions and answers
 
 const quiz = [
-  ["What has keys but can't open locks?", "a piano"],
-  ["I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?", "an echo"],
-  ["I'm tall when I'm young, and I'm short when I'm old. What am I?", "a candle"]
+  {
+    question: "What has keys but can't open locks?",
+    answer: "a piano"
+  },
+  {
+    question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+    answer: "an echo"
+  },
+  {
+    question: "I'm tall when I'm young, and I'm short when I'm old. What am I?",
+    answer: "a candle"
+  },
 ];
 
 
@@ -21,12 +30,12 @@ const wrong = [];
 */
 
 for (let i = 0; i < quiz.length; i++) {
-  const question = prompt(quiz[i][0]);
-  if (quiz[i][1] === question.toLowerCase()) {
-    right.push(quiz[i][0]);
+  const question = prompt(quiz[i].question);
+  if (quiz[i].answer === question.toLowerCase()) {
+    right.push(quiz[i].question);
     correctAnswers++;
   } else {
-    wrong.push(quiz[i][0]);
+    wrong.push(quiz[i].answer);
   };
 }
 
