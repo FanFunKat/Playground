@@ -9,6 +9,12 @@ const btnMain = document.getElementById('btn-main');
 
 const items = document.getElementsByTagName('li');
 
+const highlights = document.getElementsByClassName('highlight');
+
+for (const highlight of highlights) {
+  highlight.style.color = 'orchid';
+}
+
 for (let item in items) {
   items[item].style.backgroundColor = 'skyblue';
 }
