@@ -7,6 +7,13 @@
 const headline = document.getElementById('headline');
 const btnMain = document.getElementById('btn-main');
 
+const items = document.getElementsByTagName('li');
+
+for (let item in items) {
+  items[item].style.backgroundColor = 'skyblue';
+}
+
 btnMain.addEventListener('click', () => {
   headline.style.border = '1px solid red';
 });
+
