@@ -7,8 +7,8 @@
 // const btnMain = document.getElementById('btn-main'); 
 const btnMain = document.querySelector('.btn-main');
 
-// const items = document.getElementsByTagName('li'); //HTMLCollection - all matches
-const items = document.querySelectorAll('li'); //NodeList - first match
+// const items = document.getElementsByTagName('li'); //HTMLCollection
+const items = document.querySelectorAll('li'); //NodeList
 
 
 // const highlights = document.getElementsByClassName('highlight'); //HTMLCollection
