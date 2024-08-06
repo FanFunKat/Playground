@@ -4,15 +4,15 @@
 //   body.innerHTML = '<h1>Hello World!</h1>';
 // });
 
-// const btnMain = document.getElementById('btn-main');
+// const btnMain = document.getElementById('btn-main'); 
 const btnMain = document.querySelector('.btn-main');
 
-// const items = document.getElementsByTagName('li');
-const items = document.querySelectorAll('li');
+// const items = document.getElementsByTagName('li'); //HTMLCollection
+const items = document.querySelectorAll('li'); //NodeList
 
 
-// const highlights = document.getElementsByClassName('highlight');
-const highlights = document.querySelectorAll('.highlight');
+// const highlights = document.getElementsByClassName('highlight'); //HTMLCollection
+const highlights = document.querySelectorAll('.highlight'); //NodeList
 
 for (const highlight of highlights) {
   highlight.style.color = 'orchid';
