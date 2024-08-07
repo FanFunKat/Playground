@@ -5,13 +5,12 @@ const btnToggle = document.querySelector('.btn-toggle');
 btnCreate.addEventListener('click', () => {
   const input = document.querySelector('.input-main');
   const list = document.querySelector('ul');
-  const item = document.createElement('li');
 
-  item.textContent = input.value;
+  list.insertAdjacentHTML(
+    'afterbegin',
+    `<li class="list-item">${input.value}</li>`
+  );
   input.value = '';
-
-  list.prepend(item); // at the top of the list
-
 })
 
 btnToggle.addEventListener('click', () => {
