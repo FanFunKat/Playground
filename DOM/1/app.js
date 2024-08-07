@@ -10,7 +10,7 @@ btnCreate.addEventListener('click', () => {
   item.textContent = input.value;
   input.value = '';
 
-  list.append(item); // at the end of list
+  list.prepend(item); // at the top of the list
 
 })
 
