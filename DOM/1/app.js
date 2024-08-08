@@ -2,11 +2,13 @@ const btnCreate = document.querySelector('.btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
 const btnRemove = document.querySelector('.btn-remove');
 const listContainer = document.querySelector('.list-container');
-const firstItem = document.getElementsByTagName('li')[0];
+const listItems = document.getElementsByTagName('li');
 
-firstItem.addEventListener('mouseover', () => {
-  firstItem.textContent = firstItem.textContent.toUpperCase();
-});
+for (let i = 0; i < listItems.length; i++) { //but it doesn't work for the new items
+  listItems[i].addEventListener('mouseover', () => {
+    listItems[i].textContent = listItems[i].textContent.toUpperCase();
+  });
+}
 
 btnCreate.addEventListener('click', () => {
   const input = document.querySelector('.input-main');
