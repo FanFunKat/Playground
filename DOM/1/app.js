@@ -3,26 +3,32 @@ const btnToggle = document.querySelector('.btn-toggle');
 const btnRemove = document.querySelector('.btn-remove');
 const listContainer = document.querySelector('.list-container ul');
 
-listContainer.addEventListener('mouseover', (event) => {
-  if (event.target.tagName === 'LI') {
-    event.target.textContent = event.target.textContent.toUpperCase();
-  }
-});
+function attachRemoveButton(li) {
+  let removeBtn = document.createElement('button');
+  removeBtn.className = 'remove';
+  removeBtn.textContent = 'Remove';
+  li.appendChild(removeBtn);
+};
 
-listContainer.addEventListener('mouseout', (event) => {
-  if (event.target.tagName === 'LI') {
-    event.target.textContent = event.target.textContent.toLowerCase();
-  }
-});
+// listContainer.addEventListener('mouseover', (event) => {
+//   if (event.target.tagName === 'LI') {
+//     event.target.textContent = event.target.textContent.toUpperCase();
+//   }
+// });
+
+// listContainer.addEventListener('mouseout', (event) => {
+//   if (event.target.tagName === 'LI') {
+//     event.target.textContent = event.target.textContent.toLowerCase();
+//   }
+// });
 
 btnCreate.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
   const input = document.querySelector('.input-main');
-  const list = document.querySelector('ul');
-
-  list.insertAdjacentHTML(
-    'afterbegin',
-    `<li class="list-item">${input.value}</li>`
-  );
+  let li = document.createElement('li');
+  li.textContent = input.value;
+  attachRemoveButton(li);
+  ul.appendChild(li);
   input.value = '';
 })
 
