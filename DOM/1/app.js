@@ -16,17 +16,13 @@ for (let i = 0; i < listItems.length; i++) {
   attachRemoveButton(listItems[i]);
 }
 
-// listContainer.addEventListener('mouseover', (event) => {
-//   if (event.target.tagName === 'LI') {
-//     event.target.textContent = event.target.textContent.toUpperCase();
-//   }
-// });
-
-// listContainer.addEventListener('mouseout', (event) => {
-//   if (event.target.tagName === 'LI') {
-//     event.target.textContent = event.target.textContent.toLowerCase();
-//   }
-// });
+listContainer.addEventListener('click', (event) => {
+  if (event.target.tagName === 'BUTTON') {
+    const button = event.target;
+    const li = button.parentNode;
+    li.remove()
+  }
+});
 
 btnCreate.addEventListener('click', () => {
   let ul = document.getElementsByTagName('ul')[0];
