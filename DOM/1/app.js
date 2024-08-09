@@ -1,6 +1,5 @@
 const btnCreate = document.querySelector('.btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
-const btnRemove = document.querySelector('.btn-remove');
 const listContainer = document.querySelector('.list-container ul');
 const listItems = listContainer.children;
 // console.log(listItems);
@@ -42,9 +41,4 @@ btnToggle.addEventListener('click', () => {
     listContainer.style.display = 'none';
     btnToggle.textContent = 'Show List';
   }
-});
-
-btnRemove.addEventListener('click', () => {
-  const lastItems = document.querySelector('li:last-child');
-  lastItems.remove();
 });
