@@ -2,6 +2,8 @@ const btnCreate = document.querySelector('.btn-main');
 const btnToggle = document.querySelector('.btn-toggle');
 const btnRemove = document.querySelector('.btn-remove');
 const listContainer = document.querySelector('.list-container ul');
+const listItems = listContainer.children;
+// console.log(listItems);
 
 function attachRemoveButton(li) {
   let removeBtn = document.createElement('button');
@@ -9,6 +11,10 @@ function attachRemoveButton(li) {
   removeBtn.textContent = 'Remove';
   li.appendChild(removeBtn);
 };
+
+for (let i = 0; i < listItems.length; i++) {
+  attachRemoveButton(listItems[i]);
+}
 
 // listContainer.addEventListener('mouseover', (event) => {
 //   if (event.target.tagName === 'LI') {
