@@ -10,7 +10,7 @@ function getJSON(url, callback) { //higher order function
   xhr.onload = () => {
     if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
-      return callback(data);
+      return callback(data); //In this case, it's using return to ensure that execution in the current scope does not continue past invoking callback(data). This might prevent multiple callbacks from being accidentally invoked, for example. In any case, it provides a clear way of short-circuiting the function you're in.
     }
   };
   xhr.send();
@@ -38,10 +38,11 @@ function generateHTML(data) {
   }
 }
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (e) => {
   getJSON(astrosUrl, (json) => {
     json.people.map(person => {
       getJSON(wikiUrl + person.name, generateHTML);
     })
   });
+  e.target.remove();
 });
