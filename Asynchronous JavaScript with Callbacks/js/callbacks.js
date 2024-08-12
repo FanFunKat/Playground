@@ -16,6 +16,12 @@ function getJSON(url, callback) { //higher order function
   xhr.send();
 }
 
+function getProfiles(json) {
+  json.people.map(person => {
+    getJSON(wikiUrl + person.name, generateHTML);
+  });
+}
+
 // Generate the markup for each profile
 function generateHTML(data) {
   const section = document.createElement('section');
@@ -39,10 +45,6 @@ function generateHTML(data) {
 }
 
 btn.addEventListener('click', (e) => {
-  getJSON(astrosUrl, (json) => {
-    json.people.map(person => {
-      getJSON(wikiUrl + person.name, generateHTML);
-    })
-  });
+  getJSON(astrosUrl, getProfiles);
   e.target.remove();
 });
