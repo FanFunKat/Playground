@@ -17,3 +17,6 @@ Small and larger projects related to various educational platforms. So that I wo
 
 7th challenge - pet profiles
 
+8th challenge - DOM manipulation
+
+9th challenge - widget, JSON
