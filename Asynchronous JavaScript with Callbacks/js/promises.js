@@ -29,17 +29,25 @@ function getProfiles(json) {
 
 // Generate the markup for each profile
 function generateHTML(data) {
-  data.map(person => {
+  data.forEach(person => {
     const section = document.createElement('section');
     peopleList.appendChild(section);
-    section.innerHTML = `
-      <img src=${person.thumbnail.source}>
-      <h2>${person.title}</h2>
-      <p>${person.description}</p>
-      <p>${person.extract}</p>
-    `;
-  })
+    if (person.type === 'disambiguation') {
+      section.innerHTML = `
+        <h2>${person.title}</h2>
+        <p>Multiple people found with this name on Wikipedia. Please specify further.</p>
+      `;
+    } else {
+      section.innerHTML = `
+        <img src=${person.thumbnail.source}>
+        <h2>${person.title}</h2>
+        <p>${person.description}</p>
+        <p>${person.extract}</p>
+      `;
+    }
+  });
 }
+
 
 btn.addEventListener('click', (event) => {
   getJSON(astrosUrl)
