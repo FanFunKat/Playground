@@ -24,7 +24,9 @@ function getProfiles(json) {
   const profiles = json.people.map(person => {
     return getJSON(wikiUrl + person.name);
   });
+  // console.log(Promise.all(profiles));
   return Promise.all(profiles);
+
 }
 
 // Generate the markup for each profile
@@ -37,7 +39,7 @@ function generateHTML(data) {
         <h2>${person.title}</h2>
         <p>Multiple people found with this name on Wikipedia. Please specify further.</p>
       `;
-    } else {
+    } else if (person.type === 'standard') {
       section.innerHTML = `
         <img src=${person.thumbnail.source}>
         <h2>${person.title}</h2>
@@ -47,7 +49,6 @@ function generateHTML(data) {
     }
   });
 }
-
 
 btn.addEventListener('click', (event) => {
   getJSON(astrosUrl)
