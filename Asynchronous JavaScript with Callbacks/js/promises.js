@@ -34,17 +34,20 @@ function generateHTML(data) {
   data.forEach(person => {
     const section = document.createElement('section');
     peopleList.appendChild(section);
-    if (person.type === 'disambiguation') {
-      section.innerHTML = `
-        <h2>${person.title}</h2>
-        <p>Multiple people found with this name on Wikipedia. Please specify further.</p>
-      `;
-    } else if (person.type === 'standard') {
+    // Check if request returns a 'standard' page from Wiki
+    if (person.type === 'standard') {
       section.innerHTML = `
         <img src=${person.thumbnail.source}>
         <h2>${person.title}</h2>
         <p>${person.description}</p>
         <p>${person.extract}</p>
+      `;
+    } else {
+      section.innerHTML = `
+        <img src="img/profile.jpg" alt="ocean clouds seen from space">
+        <h2>${person.title}</h2>
+        <p>Results unavailable for ${person.title}</p>
+        ${person.extract_html}
       `;
     }
   });
