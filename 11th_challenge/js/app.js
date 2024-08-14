@@ -92,10 +92,10 @@ function postData(e) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ name: name, comment: comment })
+    body: JSON.stringify({ name, comment }) //short for: name: name, comment: comment
   })
     .then(checkStatus)
     .then(res => res.json())
-    .then(data = console.log(data))
+    .then(data => console.log(data))
 
 }
