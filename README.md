@@ -19,4 +19,6 @@ Small and larger projects related to various educational platforms. So that I wo
 
 8th challenge - DOM manipulation
 
-9th challenge - widget, JSON
+9th challenge - widget, JSON - "Who is in the office?" & "Which rooms are available?"
+
+10th challenge - asynchronous JavaScript with Callbacks, Promisses and async-await. App "How many people are in Space?".
