@@ -28,10 +28,23 @@ function generateOptions(data) {
 
 function generateImage(data) {
   const html = `
-    <img src=${data} alt="random dog">
+    <img src=${data} alt=''>
     <p>Click to view images of ${select.value}s</p>
   `;
   card.innerHTML = html;
+}
+
+function fetchBreedImage() {
+  const breed = select.value;
+  const img = card.querySelector('img');
+  const p = card.querySelector('p');
+
+  fetchData(`https://dog.ceo/api/breed/${breed.name}/images/random`)
+    .then(data => {
+      img.src = data.message;
+      img.alt = breed;
+      p.textContent = `Click to view more ${breed}s`;
+    })
 }
 
 // ------------------------------------------
