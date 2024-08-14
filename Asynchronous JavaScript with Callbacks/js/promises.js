@@ -22,7 +22,13 @@ const btn = document.querySelector('button');
 
 function getProfiles(json) {
   const profiles = json.people.map(person => {
-    return fetch(wikiUrl + person.name).then(response => response.json());
+    const craft = person.craft;
+    return fetch(wikiUrl + person.name)
+      .then(response => response.json())
+      .then(profile => {
+        return { ...profile, craft };
+      })
+      .catch(err => console.log('Error Fetching Wiki: ', err));
   });
   console.log(Promise.all(profiles));
   return Promise.all(profiles);
@@ -36,17 +42,11 @@ function generateHTML(data) {
     if (person.type === 'standard') {
       section.innerHTML = `
         <img src=${person.thumbnail.source}>
+        <span>${person.craft}</span>
         <h2>${person.title}</h2>
         <p>${person.description}</p>
         <p>${person.extract}</p>
       `;
-    } else if (person.type === 'standard' && person.name + '(taikonaut)') {
-      section.innerHTML = `
-        <img src=${person.thumbnail.source}>
-        <h2>${person.title}</h2>
-        <p>${person.description}</p>
-        <p>${person.extract}</p>
-        `;
     } else {
       section.innerHTML = `
         <img src="img/profile.jpg" alt="ocean clouds seen from space">
