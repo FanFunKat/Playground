@@ -39,7 +39,7 @@ function fetchBreedImage() {
   const img = card.querySelector('img');
   const p = card.querySelector('p');
 
-  fetchData(`https://dog.ceo/api/breed/${breed.name}/images/random`)
+  fetchData(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(data => {
       img.src = data.message;
       img.alt = breed;
@@ -50,7 +50,8 @@ function fetchBreedImage() {
 // ------------------------------------------
 //  EVENT LISTENERS
 // ------------------------------------------
-
+select.addEventListener('change', fetchBreedImage);
+card.addEventListener('click', fetchBreedImage);
 
 
 // ------------------------------------------
