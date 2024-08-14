@@ -6,3 +6,8 @@ class Pet {
     this.breed = breed;
   }
 }
+
+const ernie = new Pet('Ernie', 'dog', 1, 'pug');
+const valentina = new Pet('Valentina', 'dog', 8, 'akita');
+
+console.log(ernie, valentina);
