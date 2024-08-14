@@ -24,12 +24,6 @@ Promise.all([ //all or nothing operation
     generateImage(randomImage);
   })
 
-// fetchData('https://dog.ceo/api/breeds/list')
-//   .then(data => generateOptions(data.message));
-
-// fetchData('https://dog.ceo/api/breeds/image/random')
-//   .then(data => generateImage(data.message));
-
 // ------------------------------------------
 //  HELPER FUNCTIONS
 // ------------------------------------------
@@ -99,5 +93,4 @@ function postData(e) {
     .then(checkStatus)
     .then(res => res.json())
     .then(data => console.log(data))
-
 }
