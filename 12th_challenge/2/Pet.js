@@ -16,3 +16,6 @@ const ernie = new Pet('Ernie', 'dog', 1, 'pug', 'Woof!');
 const valentina = new Pet('Valentina', 'cat', 8, 'akita', 'Meow!');
 
 console.log(ernie, valentina);
+
+ernie.speak();
+valentina.speak();
