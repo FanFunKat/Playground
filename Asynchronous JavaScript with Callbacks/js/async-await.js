@@ -15,13 +15,13 @@ async function getJSON(url) {
 }
 
 async function getPeopleInSpace(url) {
-  const peopleResponse = await fetch(url);
-  const peopleJSON = await peopleResponse.json();
+  // const peopleResponse = await fetch(url);
+  const peopleJSON = await getJSON(url);
 
   const profiles = peopleJSON.people.map(async person => {
     const craft = person.craft;
-    const profileResponse = await fetch(wikiUrl + person.name);
-    const profileJSON = await profileResponse.json();
+    // const profileResponse = await fetch(wikiUrl + person.name);
+    const profileJSON = await getJSON(wikiUrl + person.name);
 
     return { ...profileJSON, craft };
   });
