@@ -10,6 +10,10 @@ const ernie = {
     }
 }
 
+//-----------------------------------------------------
+// ACCESSING OBJECT PROPERTIES
+//-----------------------------------------------------
+
 console.log(ernie.age);
 console.log(ernie['age']);
 console.log(ernie.breed);
@@ -22,3 +26,14 @@ ernie.fullDescription();
 
 const prop = 'breed';
 ernie[prop];
+
+//-----------------------------------------------------
+// CHANGING AND ADDING OBJECT PROPERTIES
+//-----------------------------------------------------
+
+ernie.age = 2;
+ernie['age'] = 2;
+
+ernie.color = 'black';
+
+console.log(ernie);
