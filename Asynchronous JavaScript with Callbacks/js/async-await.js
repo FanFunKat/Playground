@@ -44,9 +44,9 @@ function generateHTML(data) {
   });
 }
 
-btn.addEventListener('click', async (event) => {
+btn.addEventListener('click', (event) => {
   event.target.textContent = "Loading...";
-  const astros = await getPeopleInSpace(astrosUrl);
-  event.target.remove();
-  generateHTML(astros);
+  getPeopleInSpace(astrosUrl)
+    .then(generateHTML)
+    .finally(() => event.target.remove());
 });
