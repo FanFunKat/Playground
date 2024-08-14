@@ -4,13 +4,23 @@ const peopleList = document.getElementById('people');
 const btn = document.querySelector('button');
 
 // Handle all fetch requests
+
+async function getJSON(url) {
+  try {
+    const response = await fetch(url);
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getPeopleInSpace(url) {
-  const peopleResponse = await fetch(url).catch(e => console.log('Error fetching data: ', e));
+  const peopleResponse = await fetch(url);
   const peopleJSON = await peopleResponse.json();
 
   const profiles = peopleJSON.people.map(async person => {
     const craft = person.craft;
-    const profileResponse = await fetch(wikiUrl + person.name).catch(e => console.log('Error fetching data: ', e));
+    const profileResponse = await fetch(wikiUrl + person.name);
     const profileJSON = await profileResponse.json();
 
     return { ...profileJSON, craft };
