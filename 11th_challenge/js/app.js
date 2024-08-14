@@ -12,7 +12,7 @@ function fetchData(url) {
     .catch(error => console.log('Looks like there was a problem', error))
 }
 
-Promise.all([
+Promise.all([ //all or nothing operation
   fetchData('https://dog.ceo/api/breeds/list'),
   fetchData('https://dog.ceo/api/breeds/image/random')
 ])
@@ -81,3 +81,14 @@ card.addEventListener('click', fetchBreedImage);
 //  POST DATA
 // ------------------------------------------
 
+function postData(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const comment = document.getElementById('comment').value;
+
+  fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(checkStatus)
+    .then(res => res.json())
+    .then(data = console.log(data))
+
+}
