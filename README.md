@@ -22,3 +22,7 @@ Small and larger projects related to various educational platforms. So that I wo
 9th challenge - widget, JSON - "Who is in the office?" & "Which rooms are available?"
 
 10th challenge - asynchronous JavaScript with Callbacks, Promisses and async-await. App "How many people are in Space?".
+
+11th challenge - "DoggoSelect" an application for displaying random photos of dogs with a choice of dog breed and the ability to add a name and a note.
+
+12th challenge -  1/ Object Literals; 2/
