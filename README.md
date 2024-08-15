@@ -25,4 +25,4 @@ Small and larger projects related to various educational platforms. So that I wo
 
 11th challenge - "DoggoSelect" an application for displaying random photos of dogs with a choice of dog breed and the ability to add a name and a note.
 
-12th challenge -  1/ Object Literals; 2/ Class, constructor, instance; 
+12th challenge -  1/ Object Literals; 2/ Class, constructor, instance, getter & setter; 
