@@ -38,6 +38,23 @@ class Pet {
   }
 }
 
+class Owner {
+  constructor(name, address) {
+    this.name = name;
+    this.address = address;
+  }
+
+  set phone(phone) {
+    const phoneNormalized = phone.replace(/[^0-9]/g, '');
+    this._phone = phoneNormalized;
+  }
+
+  get phone() {
+    return this._phone;
+  }
+}
+
+
 const ernie = new Pet('Ernie', 'dog', 1, 'pug', 'Woof!');
 const valentina = new Pet('Valentina', 'cat', 8, 'akita', 'Meow!');
 
@@ -49,5 +66,8 @@ const valentina = new Pet('Valentina', 'cat', 8, 'akita', 'Meow!');
 console.log(ernie.activity); // Accessing the activity property, which is a getter method, will not show up as an actual property attached to the object. Therefore, you won't see it when directly inspecting the object.
 console.log(ernie);
 
-ernie.owner = 'John';
+ernie.owner = new Owner('John', 'Ogrodowa 22');
+ernie.owner.phone = '(058) 123-456-789';
 console.log(ernie.owner);
+console.log(ernie.owner.name);
+console.log(ernie.owner.phone);
