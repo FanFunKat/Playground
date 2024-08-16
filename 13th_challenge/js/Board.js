@@ -26,4 +26,14 @@ class Board {
 
     return spaces;
   }
+
+/**
+ * Render the Board
+ */
+
+  drawHTMLBoard(){
+    for( const space of this.spaces) {
+      space.drawSVGSpace();
+    }
+  }
 }
