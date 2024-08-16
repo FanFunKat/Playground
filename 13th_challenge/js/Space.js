@@ -9,7 +9,7 @@ class Space {
   }
 
 /**
- * Draw SVG space
+ * Draw SVG space.
  */
 
   drawSVGSpace(){
