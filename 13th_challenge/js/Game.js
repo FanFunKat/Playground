@@ -29,7 +29,7 @@ class Game {
   }
 
   /**
-   *  Gets game ready for play
+   *  Begin game.
    */
 
   startGame(){
