@@ -5,9 +5,17 @@ class Token {
     this.dropped = false
   }
 
-/**
- * Draws new HTML token.
- */
+  /**
+   * Gets associated htmlToken.
+   * @return  {element}   Html element associated with token object.
+   */
+  get htmlToken() {
+    return document.getElementById(this.id);
+  }
+
+  /**
+   * Draws new HTML token.
+   */
 
   drawHTMLToken() {
     const token = document.createElement('div');
@@ -16,9 +24,4 @@ class Token {
     token.setAttribute('class', 'token');
     token.style.backgroundColor = this.owner.color;
   }
-
-
-  // get htmlToken(){
-  //   return drawHTMLToken()
-  // }
 }
