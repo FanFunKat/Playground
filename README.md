@@ -13,7 +13,7 @@ Small and larger projects related to various educational platforms. So that I wo
 
 5th challenge - refactoring the code
 
-6th challange - quiz - array
+6th challenge - quiz - array
 
 7th challenge - pet profiles
 
@@ -25,4 +25,6 @@ Small and larger projects related to various educational platforms. So that I wo
 
 11th challenge - "DoggoSelect" an application for displaying random photos of dogs with a choice of dog breed and the ability to add a name and a note.
 
-12th challenge -  1/ Object Literals; 2/ Class, constructor, instance, getter & setter; 
+12th challenge -  1/ Object Literals; 2/ Class, constructor, instance, getter & setter;
+
+13th challenge - game 'Four in a Row';
