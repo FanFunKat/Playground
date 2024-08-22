@@ -36,13 +36,14 @@ function user(request, response) {
         jsPoints: profileJSON.points.JavaScript
       };
       // simple response
-      response.write(values.username + ' has ' + values.badges + ' badges\n');
+      response.write(`${values.username} has ${values.badges} badges\n`);
       response.end('Footer\n');
     });
 
     // on 'error'
     studentProfile.on("error", function(error){
       // show error
+      response.write(`Error: ${error.message}\n`);
       response.end('Footer\n');
     });
   }
