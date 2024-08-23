@@ -1,7 +1,7 @@
 {
-  "html.autoClosingTags": false,
+  "html.autoClosingTags": true,
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
-  "editor.autoClosingDelete": "never",
-  "editor.autoClosingOvertype": "never"
+  "editor.autoClosingDelete": "auto",
+  "editor.autoClosingOvertype": "auto"
 }
