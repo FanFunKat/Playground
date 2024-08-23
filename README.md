@@ -29,4 +29,4 @@ Small and larger projects related to various educational platforms. So that I wo
 
 13th challenge - game 'Four in a Row';
 
-14th challenge - imple dynamic site with Node.js
+14th challenge - simple dynamic site with Node.js
