@@ -11,7 +11,3 @@ http.createServer(function (request, response) {
   router.user(request, response); //handler
 }).listen(3000);
 console.log('Server running at http://<workspace-url>/');
-
-// Function that handle the reading of file and marge in value
-  // read from file and get a string
-    // merge value in to string
