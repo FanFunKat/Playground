@@ -9,8 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/cards', (req, res) => {
-  res.locals.prompt = 'Who is buried in Grand\'s tomb?';
-  res.render('card');
+  res.render('card', { prompt: 'Who is buried in Grand\'s tomb?', hint: 'Think about whose tomb it is.' });
 });
 
 app.listen(3000, () => {
