@@ -36,6 +36,11 @@ app.post('/hello', (req, res) => {
   res.redirect('/');
 });
 
+app.post('/goodbye', (req, res) => {
+  res.clearCookie('username', req.body.username);
+  res.redirect('/hello');
+});
+
 app.listen(3000, () => {
   console.log('Example app is runing on localhost:3000!');
 });
