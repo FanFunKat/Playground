@@ -37,7 +37,7 @@ app.post('/hello', (req, res) => {
 });
 
 app.post('/goodbye', (req, res) => {
-  res.clearCookie('username', req.body.username);
+  res.clearCookie('username');
   res.redirect('/hello');
 });
 
