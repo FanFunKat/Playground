@@ -1,11 +1,14 @@
 let count = 0;
 
+let dogsCounting = 0;
+let birdsCounting = 0;
+
 function countBirds() {
-  count += 1;
-  return count + ' birds';
+  birdsCounting += 1;
+  return birdsCounting + ' birds';
 }
 
 function countDogs() {
-  count += 1;
-  return count + ' dogs';
+  dogsCounting += 1;
+  return dogsCounting + ' dogs';
 }
