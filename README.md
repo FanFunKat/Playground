@@ -34,3 +34,5 @@ Small and larger projects related to various educational platforms. So that I wo
 15th challenge - Express app 'Flashcards'— OMG! The last part was a mess, but I figured it out.
 
 16th challenge - Closures
+
+17th_challenge - debugging with VS Code, simple app 'Reversify'
