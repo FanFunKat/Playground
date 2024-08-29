@@ -32,3 +32,5 @@ Small and larger projects related to various educational platforms. So that I wo
 14th challenge - simple dynamic site with Node.js
 
 15th challenge - Express app 'Flashcards'— OMG! The last part was a mess, but I figured it out.
+
+16th challenge - Closures
