@@ -1,28 +1,15 @@
-// function countBirds() {
-//   let count = 0;
-//   function counter() {
-//     count += 1;
-//     return count + 'birds';
-//   }
-//   return counter;
-// }
-
-function makeBirdCounter() {
+function makeCounter(noun) {
   let count = 0;
   return function () {
     count += 1;
-    return count + 'birds';
+    return `${count} ${noun}`;
   }
 }
 
-const birdCounter = makeBirdCounter();
+const birdCounter = makeCounter('birds');
+const dogCounter = makeCounter('dogs');
 
-function makeDogCounter() {
-  let count = 0;
-  return function () {
-    count += 1;
-    return count + 'dogs';
-  }
-}
-
-const dogCounter = makeBirdCounter();
+console.log(birdCounter()); // 1 bird
+console.log(dogCounter()); // 1 dogs
+console.log(birdCounter());
+console.log(dogCounter());
