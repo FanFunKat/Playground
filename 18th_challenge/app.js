@@ -58,29 +58,49 @@ function getUsers() {
   })
 }
 
-app.get('/', (req, res) => {
-  getUsers()
-    .then((users) => {
-      // throw new Error('This is a test error');
-      res.render('index', { title: 'Users', users: users.users });
-    })
-    .catch((err) => {
-      res.render('error', { error: err })
-    });
+// app.get('/', (req, res) => {
+//   getUsers()
+//     .then((users) => {
+//       // throw new Error('This is a test error');
+//       res.render('index', { title: 'Users', users: users.users });
+//     })
+//     .catch((err) => {
+//       res.render('error', { error: err })
+//     });
+// });
+
+// app.get('/:id', (req, res) => {
+//   getUser(req.params.id)
+//     .then((user) => {
+//       return getFollowers(user);
+//     })
+//     .then((user, followers) => {
+//       res.render('profile', { title: "Profile Page", users: user, followers: followers });
+//     })
+//     .catch((err) => {
+//       res.render('error', { error: err });
+//     });
+// });
+
+// ASYNC/AWAIT
+
+app.get('/', async (req, res) => {
+  try {
+    const users = await getUsers();
+    res.render('index', { title: 'Users', users: users.users });
+  } catch (err) {
+    res.render('error', { error: err })
+  }
 });
 
-app.get('/:id', (req, res) => {
-  getUser(req.params.id)
-    .then((user) => {
-      return getFollowers(user);
-    })
-    .then((user, followers) => {
-      res.render('profile', { title: "Profile Page", users: user, followers: followers });
-    })
-    .catch((err) => {
-      res.render('error', { error: err });
-    });
+app.get('/:id', async (req, res) => {
+  try {
+    const user = await getUser(req.params.id);
+    const followers = await getFollowers(user);
+    res.render('profile', { title: "Profile Page", user: user, followers: followers });
+  } catch (err) {
+    res.render('error', { error: err });
+  }
 });
-
 
 app.listen(3000, () => console.log('App listening on port 3000!'));
