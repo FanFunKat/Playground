@@ -8,6 +8,16 @@ app.set('view engine', 'pug');
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static('public'));
 
+function asyncHandler(cb) {
+  return async (req, res, next) => {
+    try {
+      await cb(req, res, next);
+    } catch (err) {
+      res.render('error', { error: err });
+    }
+  }
+}
+
 //CALL BACKS
 // function getUsers(cb) {
 //   fs.readFile('data.json', 'utf8', (err, data) => {
@@ -84,23 +94,15 @@ function getUsers() {
 
 // ASYNC/AWAIT
 
-app.get('/', async (req, res) => {
-  try {
-    const users = await getUsers();
-    res.render('index', { title: 'Users', users: users.users });
-  } catch (err) {
-    res.render('error', { error: err })
-  }
-});
+app.get('/', asyncHandler(async (req, res) => {
+  const users = await getUsers();
+  res.render('index', { title: 'Users', users: users.users });
+}));
 
-app.get('/:id', async (req, res) => {
-  try {
-    const user = await getUser(req.params.id);
-    const followers = await getFollowers(user);
-    res.render('profile', { title: "Profile Page", user: user, followers: followers });
-  } catch (err) {
-    res.render('error', { error: err });
-  }
-});
+app.get('/:id', asyncHandler(async (req, res) => {
+  const user = await getUser(req.params.id);
+  const followers = await getFollowers(user);
+  res.render('profile', { title: "Profile Page", user: user, followers: followers });
+}));
 
 app.listen(3000, () => console.log('App listening on port 3000!'));
