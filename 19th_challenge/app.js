@@ -9,30 +9,42 @@ app.use(express.json());
 app.get('/quotes', async (req, res) => {
   try {
     const quotes = await records.getQuotes();
-    res.json(quotes);
+    if (quotes) {
+      res.json(quotes);
+    } else {
+      res.status(404).json({ error: 'No quotes found' });
+    }
   } catch (err) {
-    res.json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
 // Send a GET request to /quotes/:id to READ(view) a quote.
 app.get('/quotes/:id', async (req, res) => {
   try {
     const quote = await records.getQuote(req.params.id);
-    res.json(quote);
+    if (quote) {
+      res.json(quote);
+    } else {
+      res.status(404).json({ error: `Quote ID ${req.params.id} not found` });
+    }
   } catch (err) {
-    res.json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
 // Send a POST request to /quotes to CREATE(add) a new quote.
 app.post('/quotes', async (req, res) => {
   try {
-    const newQuote = await records.createQuote({
-      quote: req.body.quote,
-      author: req.body.author
-    });
-    res.json(newQuote);
+    if (req.body.quote && req.body.author) {
+      const newQuote = await records.createQuote({
+        quote: req.body.quote,
+        author: req.body.author
+      });
+      res.status(201).json(newQuote);
+    } else {
+      res.status(400).json({ error: 'Please provide a quote and an author' });
+    }
   } catch (err) {
-    res.json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
 // Send a PUT request to /quotes/:id to UPDATE(edit) a quote.
