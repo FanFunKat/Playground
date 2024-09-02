@@ -71,5 +71,13 @@ router.delete('/quotes/:id', asyncHandler(async (req, res) => {
 }));
 
 // Send a GET request to /quotes/quote/random to READ(view) a random quote.
+router.get('/quotes/quote/random', asyncHandler(async (req, res) => {
+  const quote = await records.getRandomQuote();
+  if (quote) {
+    res.json(quote);
+  } else {
+    res.status(404).json({ message: 'No quotes found' });
+  }
+}));
 
 module.exports = router;
