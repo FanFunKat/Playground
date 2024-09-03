@@ -1,23 +1,9 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: 'movies.db',
-  //logging: false // disable logging
-});
-
-// Movie model
-class Movie extends Sequelize.Model { }
-Movie.init({
-  title: Sequelize.STRING,
-  year: Sequelize.INTEGER,
-  director: Sequelize.STRING,
-  rating: Sequelize.INTEGER,
-}, { sequelize }
-);
+const db = require('./db');
+const { Movie } = db.models;
 
 // async IIFE
 (async () => {
-  await sequelize.sync({ forse: true });
+  await db.sequelize.sync({ forse: true });
   try {
     const movieInstance = await Promise.all([
       Movie.create({
@@ -51,6 +37,7 @@ Movie.init({
         rating: 8.9,
       }),
     ]);
+    console.log(movieInstance);
   } catch (error) {
     console.error('Error connecting to the database: ', error);
   }
