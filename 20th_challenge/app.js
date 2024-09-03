@@ -18,9 +18,14 @@ Movie.init({
 (async () => {
   await sequelize.sync({ forse: true });
   try {
-    await sequelize.authenticate();
-    // console.log('Connection to the database successful!');
-
+    // Instance of the Movie class represents a database row
+    const movie = await Movie.create({
+      title: 'The Godfather',
+      year: 1972,
+      director: 'Francis Ford Coppola',
+      rating: 9.2,
+    });
+    console.log(movie.toJSON());
   } catch (error) {
     console.error('Error connecting to the database: ', error);
   }
