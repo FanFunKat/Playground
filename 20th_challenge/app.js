@@ -16,10 +16,11 @@ Movie.init({
 
 // async IIFE
 (async () => {
-  await sequelize.sync();
+  await sequelize.sync({ forse: true });
   try {
-    await sequelize.authenticate({ forse: true });
+    await sequelize.authenticate();
     // console.log('Connection to the database successful!');
+
   } catch (error) {
     console.error('Error connecting to the database: ', error);
   }
