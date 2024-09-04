@@ -1,16 +1,43 @@
-const Sequelize = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 
 module.exports = (sequelize) => {
   // Movie model
-  class Movie extends Sequelize.Model { }
+  class Movie extends Model { }
   Movie.init({
-    title: { type: Sequelize.STRING },
-    year: { type: Sequelize.DATE },
-    director: { type: Sequelize.STRING },
-    rating: { type: Sequelize.FLOAT },
-    runtime: { type: Sequelize.INTEGER },
-    releaseDate: { type: Sequelize.DATEONLY },
-    isAvailableOnVHS: { type: Sequelize.BOOLEAN }
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    director: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rating: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+    runtime: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    releaseDate: {
+      type: DataTypes.DATEONLY,
+      allowNull: false
+    },
+    isAvailableOnVHS: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   }, { sequelize });
 
   return Movie;

@@ -1,9 +1,9 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: 'movies.db',
-  logging: false
+  // logging: false
 });
 
 const db = {
@@ -12,6 +12,7 @@ const db = {
   models: {},
 };
 
+// Zainicjalizuj model
 db.models.Movie = require('./models/movie.js')(sequelize);
 
 module.exports = db;
