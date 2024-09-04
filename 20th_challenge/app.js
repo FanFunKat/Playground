@@ -11,7 +11,6 @@ const { Movie } = db.models;
     const movieInstances = await Promise.all([
       Movie.create({
         title: 'The Shawshank Redemption',
-        year: 1994,
         director: 'Frank Darabont',
         rating: 9.3,
         runtime: 142,
@@ -20,7 +19,6 @@ const { Movie } = db.models;
       }),
       Movie.create({
         title: 'The Godfather',
-        year: 1972,
         director: 'Francis Ford Coppola',
         rating: 9.2,
         runtime: 175,
@@ -29,7 +27,6 @@ const { Movie } = db.models;
       }),
       Movie.create({
         title: 'The Dark Knight',
-        year: 2008,
         director: 'Christopher Nolan',
         rating: 9.0,
         runtime: 152,
@@ -38,7 +35,6 @@ const { Movie } = db.models;
       }),
       Movie.create({
         title: 'The Godfather: Part II',
-        year: 1974,
         director: 'Francis Ford Coppola',
         rating: 9.0,
         runtime: 202,
