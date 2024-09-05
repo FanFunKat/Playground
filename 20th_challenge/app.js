@@ -1,5 +1,5 @@
 const db = require('./db');
-const { Movie } = db.models;
+const { Movie, Person } = db.models;
 
 // async IIFE
 (async () => {
@@ -41,42 +41,26 @@ const { Movie } = db.models;
         releaseDate: '1974-12-20',
         isAvailableOnVHS: true,
       })
-    ])
+    ]);
     const moviesJSON = movieInstances.map(movie => movie.toJSON());
     console.log(moviesJSON);
 
-    // const movie = await Movie.create({
-    //   title: 'The Shawshank Redemption',
-    //   year: 1994,
-    //   director: 'Frank Darabont',
-    //   rating: 9.3,
-    //   runtime: 142,
-    //   releaseDate: '1994-10-14',
-    //   isAvailableOnVHS: true,
-    // });
-    // console.log(movie.toJSON());
-
-    // const movie2 = await Movie.create({
-    //   title: 'The Godfather',
-    //   year: 1972,
-    //   director: 'Francis Ford Coppola',
-    //   rating: 9.2,
-    //   runtime: 175,
-    //   releaseDate: '1972-03-24',
-    //   isAvailableOnVHS: false,
-    // });
-    // console.log(movie2.toJSON());
-
-    // const movie3 = await Movie.create({
-    //   title: 'The Dark Knight',
-    //   year: 2008,
-    //   director: 'Christopher Nolan',
-    //   rating: 9.0,
-    //   runtime: 152,
-    //   releaseDate: '2008-07-18',
-    //   isAvailableOnVHS: true,
-    // })
-    // console.log(movie3.toJSON());
+    const personInstances = await Promise.all([
+      Person.create({
+        first_name: 'Frank',
+        last_name: 'Darabont',
+      }),
+      Person.create({
+        first_name: 'Francis',
+        last_name: 'Ford Coppola',
+      }),
+      Person.create({
+        first_name: 'Christopher',
+        last_name: 'Nolan',
+      }),
+    ]);
+    const peopleJSON = personInstances.map(person => person.toJSON());
+    console.log(peopleJSON);
 
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
