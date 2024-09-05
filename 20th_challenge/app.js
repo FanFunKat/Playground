@@ -10,11 +10,11 @@ const { Movie } = db.models;
     console.log('Connection to the database successful!');
     const movieInstances = await Promise.all([
       Movie.create({
-        title: '',//'The Shawshank Redemption',
+        title: 'The Shawshank Redemption',
         director: 'Frank Darabont',
         rating: 9.3,
         runtime: 142,
-        releaseDate: '1794-10-14',
+        releaseDate: '1994-10-14',
         isAvailableOnVHS: true,
       }),
       Movie.create({
