@@ -136,6 +136,14 @@ const { Op } = db.Sequelize;
     }, { fields: ['isAvailableOnVHS'] });
     // console.log(movie4.get({ plain: true })); //returns the same as calling .toJSON() – a plain object with just the model attributes and values
 
+
+    // DELETE RECORDS
+    const movieToDelete = await Movie.findByPk(1);
+    await movieToDelete.destroy();
+
+    const allMovies = await Movie.findAll();
+    console.log(allMovies.map(movie => movie.toJSON()));
+
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
       const errors = error.errors.map(err => err.message);
