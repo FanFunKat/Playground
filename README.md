@@ -40,3 +40,5 @@ Small and larger projects related to various educational platforms. So that I wo
 18th challenge - asynchronous code in Express
 
 19th challenge - REST API - Exspress
+
+20th challenge - Using SQL ORMs with Node.js
