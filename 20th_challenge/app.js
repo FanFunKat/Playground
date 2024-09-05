@@ -1,6 +1,7 @@
 const { where } = require('sequelize');
 const db = require('./db');
 const { Movie, Person } = db.models;
+const { Op } = db.Sequelize;
 
 // async IIFE
 (async () => {
@@ -9,6 +10,8 @@ const { Movie, Person } = db.models;
   try {
     await db.sequelize.authenticate();
     console.log('Connection to the database successful!');
+
+    // CREATE (INSERT) RECORDS
     const movieInstances = await Promise.all([
       Movie.create({
         title: 'The Shawshank Redemption',
@@ -76,6 +79,7 @@ const { Movie, Person } = db.models;
     await movie5.save(); // save the record
     // console.log(movie5.toJSON());
 
+    // RETRIVE (READING) RECORDS
 
     const movieById = await Movie.findByPk(1);
     // console.log(movieById.toJSON());
@@ -87,7 +91,12 @@ const { Movie, Person } = db.models;
     });
     // console.log(movieByRuntime.toJSON());
 
-    const movies = await Movie.findAll();
+    const movies = await Movie.findAll({
+      attributes: ['id', 'title'], // return only id and title
+      where: {
+        isAvailableOnVHS: true,
+      },
+    });
     // console.log(movies.map(movie => movie.toJSON()));
 
     const people = await Person.findAll({
@@ -98,12 +107,17 @@ const { Movie, Person } = db.models;
     // console.log(people.map(person => person.toJSON()));
 
     const movies2 = await Movie.findAll({
+      attributes: ['id', 'title', 'runtime'],
       where: {
-        runtime: 202,
+        runtime: {
+          [Op.gt]: 140, // greater than
+          [Op.lte]: 200, //  less than or equal to
+        },
         isAvailableOnVHS: true
       }
     });;
     console.log(movies2.map(movie => movie.toJSON()));
+
 
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
