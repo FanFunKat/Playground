@@ -98,7 +98,7 @@ const { Op } = db.Sequelize;
       },
       order: [['releaseDate', 'ASC']]
     });
-    console.log(movies.map(movie => movie.toJSON()));
+    // console.log(movies.map(movie => movie.toJSON()));
 
     const people = await Person.findAll({
       where: {
@@ -118,8 +118,23 @@ const { Op } = db.Sequelize;
       },
       order: [['id', 'DESC']]
     });
-    console.log(movies2.map(movie => movie.toJSON()));
+    // console.log(movies2.map(movie => movie.toJSON()));
 
+    // UPDATE RECORDS
+    // 1. with save()
+
+    const movie3 = await Movie.findByPk(3);
+    movie3.rating = 9.1;
+    await movie3.save();
+    // console.log(movie3.get({ plain: true }));
+
+    // 2. update()
+    const movie4 = await Movie.findByPk(4);
+    await movie4.update({
+      rating: 9.1,
+      isAvailableOnVHS: false,
+    }, { fields: ['isAvailableOnVHS'] });
+    // console.log(movie4.get({ plain: true })); //returns the same as calling .toJSON() – a plain object with just the model attributes and values
 
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
