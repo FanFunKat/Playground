@@ -96,8 +96,9 @@ const { Op } = db.Sequelize;
       where: {
         isAvailableOnVHS: true,
       },
+      order: [['releaseDate', 'ASC']]
     });
-    // console.log(movies.map(movie => movie.toJSON()));
+    console.log(movies.map(movie => movie.toJSON()));
 
     const people = await Person.findAll({
       where: {
@@ -114,8 +115,9 @@ const { Op } = db.Sequelize;
           [Op.lte]: 200, //  less than or equal to
         },
         isAvailableOnVHS: true
-      }
-    });;
+      },
+      order: [['id', 'DESC']]
+    });
     console.log(movies2.map(movie => movie.toJSON()));
 
 
