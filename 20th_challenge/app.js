@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const db = require('./db');
 const { Movie, Person } = db.models;
 
@@ -43,24 +44,24 @@ const { Movie, Person } = db.models;
       })
     ]);
     const moviesJSON = movieInstances.map(movie => movie.toJSON());
-    console.log(moviesJSON);
+    // console.log(moviesJSON);
 
     const personInstances = await Promise.all([
       Person.create({
-        first_name: 'Frank',
-        last_name: 'Darabont',
+        firstName: 'Frank',
+        lastName: 'Darabont',
       }),
       Person.create({
-        first_name: 'Francis',
-        last_name: 'Ford Coppola',
+        firstName: 'Francis',
+        lastName: 'Ford Coppola',
       }),
       Person.create({
-        first_name: 'Christopher',
-        last_name: 'Nolan',
+        firstName: 'Christopher',
+        lastName: 'Nolan',
       }),
     ]);
     const peopleJSON = personInstances.map(person => person.toJSON());
-    console.log(peopleJSON);
+    // console.log(peopleJSON);
 
     // New instance
     //build() is useful when you need to manipulate instances in any way before storing them. build() would also be useful when you need a model instance to bind to a template (for example, a "New Record" form or page). You can create and then save a database object from the data bound to the template.
@@ -73,7 +74,36 @@ const { Movie, Person } = db.models;
       isAvailableOnVHS: false,
     });
     await movie5.save(); // save the record
-    console.log(movie5.toJSON());
+    // console.log(movie5.toJSON());
+
+
+    const movieById = await Movie.findByPk(1);
+    // console.log(movieById.toJSON());
+
+    const movieByRuntime = await Movie.findOne({ //returns the first matching record
+      where: {
+        runtime: 152,
+      },
+    });
+    // console.log(movieByRuntime.toJSON());
+
+    const movies = await Movie.findAll();
+    // console.log(movies.map(movie => movie.toJSON()));
+
+    const people = await Person.findAll({
+      where: {
+        firstName: 'Frank',
+      }
+    });
+    // console.log(people.map(person => person.toJSON()));
+
+    const movies2 = await Movie.findAll({
+      where: {
+        runtime: 202,
+        isAvailableOnVHS: true
+      }
+    });;
+    console.log(movies2.map(movie => movie.toJSON()));
 
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {

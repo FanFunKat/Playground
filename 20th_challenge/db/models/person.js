@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
       primaryKey: true,
       autoIncrement: true
     },
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
         }
       }
     },
-    last_name: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
