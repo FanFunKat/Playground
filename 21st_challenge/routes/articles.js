@@ -38,7 +38,8 @@ router.get("/:id/edit", asyncHandler(async (req, res) => {
 
 /* GET individual article. */
 router.get("/:id", asyncHandler(async (req, res) => {
-  res.render("articles/show", { article: {}, title: "Article Title" });
+  const article = await Article.findByPk(req.params.id);
+  res.render("articles/show", { article, title: article.title });
 }));
 
 /* Update an article. */
