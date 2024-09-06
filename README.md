@@ -42,3 +42,5 @@ Small and larger projects related to various educational platforms. So that I wo
 19th challenge - REST API - Exspress
 
 20th challenge - Using SQL ORMs with Node.js
+
+21st challenge - website/blog with articles - Using Sequelize ORM With Express
