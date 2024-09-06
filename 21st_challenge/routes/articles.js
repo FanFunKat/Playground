@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const Article = require('../models').Article;
 
 /* Handler function to wrap each route. */
-function asyncHandler(cb){
-  return async(req, res, next) => {
+function asyncHandler(cb) {
+  return async (req, res, next) => {
     try {
       await cb(req, res, next)
-    } catch(error){
+    } catch (error) {
       // Forward error to the global error handler
-      next(error);
+      // next(error);
+      res.status(500).send(error);
     }
   }
 }
@@ -25,17 +27,18 @@ router.get('/new', (req, res) => {
 
 /* POST create article. */
 router.post('/', asyncHandler(async (req, res) => {
-  res.redirect("/articles/");
+  const article = await Article.create(req.body);
+  res.redirect("/articles/" + article.id);
 }));
 
 /* Edit article form. */
-router.get("/:id/edit", asyncHandler(async(req, res) => {
+router.get("/:id/edit", asyncHandler(async (req, res) => {
   res.render("articles/edit", { article: {}, title: "Edit Article" });
 }));
 
 /* GET individual article. */
 router.get("/:id", asyncHandler(async (req, res) => {
-  res.render("articles/show", { article: {}, title: "Article Title" }); 
+  res.render("articles/show", { article: {}, title: "Article Title" });
 }));
 
 /* Update an article. */
@@ -49,7 +52,7 @@ router.get("/:id/delete", asyncHandler(async (req, res) => {
 }));
 
 /* Delete individual article. */
-router.post('/:id/delete', asyncHandler(async (req ,res) => {
+router.post('/:id/delete', asyncHandler(async (req, res) => {
   res.redirect("/articles");
 }));
 
