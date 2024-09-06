@@ -14,7 +14,14 @@ module.exports = (sequelize) => {
     }
   }
   Article.init({
-    title: DataTypes.STRING,
+    title: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: '"Title" is required',
+        },
+      }
+    },
     author: DataTypes.STRING,
     body: DataTypes.TEXT
   }, { sequelize });
