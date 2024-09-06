@@ -3,6 +3,9 @@ A place for fun, practice, and all kinds of exercises.
 Small and larger projects related to various educational platforms. So that I would write, write and write
 
 ## History
+
+### Full Stack JavaScript
+
 1st challenge - BOOM! alert
 
 2nd challenge - Mad Libs
@@ -44,3 +47,7 @@ Small and larger projects related to various educational platforms. So that I wo
 20th challenge - Using SQL ORMs with Node.js
 
 21st challenge - website/blog with articles - Using Sequelize ORM With Express
+
+### REACT
+
+22nd challenge - basic React app
