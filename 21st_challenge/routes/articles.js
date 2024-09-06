@@ -53,11 +53,14 @@ router.post('/:id/edit', asyncHandler(async (req, res) => {
 
 /* Delete article form. */
 router.get("/:id/delete", asyncHandler(async (req, res) => {
-  res.render("articles/delete", { article: {}, title: "Delete Article" });
+  const article = await Article.findByPk(req.params.id);
+  res.render("articles/delete", { article, title: "Delete Article" });
 }));
 
 /* Delete individual article. */
 router.post('/:id/delete', asyncHandler(async (req, res) => {
+  const article = await Article.findByPk(req.params.id);
+  await article.destroy();
   res.redirect("/articles");
 }));
 
