@@ -1,29 +1,6 @@
-import { StrictMode } from 'react';
+import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css'
-
-const items = [
-  {
-    name: "Apples",
-    quantity: 5,
-    id: 1
-  },
-  {
-    name: "Bananas",
-    quantity: 7,
-    id: 2
-  },
-  {
-    name: "Box of Pasta",
-    quantity: 1,
-    id: 3
-  },
-  {
-    name: "Cookies",
-    quantity: 12,
-    id: 4
-  }
-]
 
 const Header = ({ title, itemTotal }) => {
   return (
@@ -34,39 +11,75 @@ const Header = ({ title, itemTotal }) => {
   )
 }
 
-const Item = ({ name, quantity }) => {
+const Item = ({ name, removeItem, id }) => {
   return (
     <div className='item'>
-      <button className='remove-item' />
+      <button className='remove-item' onClick={() => removeItem(id)} />
       <span className='item-name'>{name}</span>
-      <Counter quantity={quantity} />
+      <Counter />
     </div>
   )
 }
 
-const Counter = ({ quantity }) => {
+const Counter = () => {
+  const [quantity, setQuantity] = useState(0);
+
+  const incrementQty = () => {
+    setQuantity(prevQty => prevQty + 1);
+  }
+
+  const decrementQty = () => {
+    if (quantity > 0) {
+      setQuantity(prevQty => prevQty - 1);
+    }
+  }
+
   return (
     <div className='quantity'>
       <span className='qty-label'>QTY</span>
-      <button className='increment'>+</button>
-      <button className='decrement'>-</button>
+      <button className='increment' onClick={incrementQty}>+</button>
+      <button className='decrement' onClick={decrementQty}>-</button>
       <span className='quantity-amount'>{quantity}</span>
     </div>
   )
 }
 
-const App = ({ itemList }) => {
+const App = () => {
+  const [items, setItems] = useState([
+    {
+      name: "Apples",
+      id: 1
+    },
+    {
+      name: "Bananas",
+      id: 2
+    },
+    {
+      name: "Box of Pasta",
+      id: 3
+    },
+    {
+      name: "Cookies",
+      id: 4
+    }
+  ]);
+
+  const handleRemoveItem = (id) => {
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
+  }
+
   return (
     <div className='grocery-list'>
       <Header
         title='My Grocery List'
-        itemTotal={itemList.length}
+        itemTotal={items.length}
       />
-      {itemList.map(item =>
+      {items.map(item =>
         <Item
           key={item.id}
+          id={item.id}
           name={item.name}
-          quantity={item.quantity}
+          removeItem={handleRemoveItem}
         />
       )}
     </div>
@@ -76,18 +89,6 @@ const App = ({ itemList }) => {
 const root = createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
-    <App itemList={items} />
+    <App />
   </StrictMode>
 );
-
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import App from './App.jsx'
-// import './index.css'
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
-
