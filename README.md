@@ -50,4 +50,4 @@ Small and larger projects related to various educational platforms. So that I wo
 
 ### REACT
 
-22nd challenge - basic React app
+22nd challenge -  App 'Grocery List' React Basics! - very basic, very no no. I'll be back!
