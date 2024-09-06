@@ -22,7 +22,14 @@ module.exports = (sequelize) => {
         },
       }
     },
-    author: DataTypes.STRING,
+    author: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: '"Author" is required',
+        },
+      }
+    },
     body: DataTypes.TEXT
   }, { sequelize });
   return Article;
