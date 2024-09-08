@@ -1,4 +1,4 @@
-import { Planet } from "./components/planet.jsx";
+import { Planet } from "./components/Planet.jsx";
 import { useState, useEffect } from "react";
 
 export function App() {
@@ -16,13 +16,10 @@ export function App() {
       {planets.map(planet => (
         <Planet
           key={planet.name}
-          name={planet.name}
-          url={planet.url}
-          desc={planet.desc}
-          diameter={planet.diameter}
-          moons={planet.moons}
+          {...planet}
         />
       ))}
     </div>
   );
 }
+export 
