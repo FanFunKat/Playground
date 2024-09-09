@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export function Stopwatch() {
   const [isRuning, setIsRuning] = useState(false);
@@ -25,3 +26,10 @@ export function Stopwatch() {
     </div>
   );
 }
+
+Stopwatch.propTypes = {
+  elapsedTime: PropTypes.number,
+  isRuning: PropTypes.bool,
+  setElapsedTime: PropTypes.func,
+  setIsRuning: PropTypes.func
+};

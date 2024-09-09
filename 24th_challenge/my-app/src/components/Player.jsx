@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import PropTypes from 'prop-types';
 import { Counter } from "./Counter"
 
 function Player({ name, id, score, removePlayer, changeScore }) {
@@ -21,5 +22,13 @@ function Player({ name, id, score, removePlayer, changeScore }) {
 const playerPropsAreEqual = (prevProps, nextProps) => {
   return prevProps.score === nextProps.score && prevProps.name === nextProps.name;
 }
+
+Player.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.number,
+  score: PropTypes.number,
+  removePlayer: PropTypes.func,
+  changeScore: PropTypes.func
+};
 
 export default memo(Player, playerPropsAreEqual);

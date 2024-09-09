@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
 export function AddPlayerForm({ addPlayer }) {
   // const [value, setValue] = useState("");
@@ -27,3 +28,7 @@ export function AddPlayerForm({ addPlayer }) {
     </form>
   );
 }
+
+AddPlayerForm.propTypes = {
+  addPlayer: PropTypes.func
+};
