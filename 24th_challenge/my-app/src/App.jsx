@@ -27,11 +27,23 @@ export function App() {
   ]);
 
   const handleRemoveplayer = (id) => {
-    setPlayers(prevPlayers => prevPlayers.filter(player => player.id !== id));
+    setPlayers(players.filter(player => player.id !== id));
+  }
+
+  const handleScoreChange = (id, delta) => {
+    setPlayers(prevPlayers => prevPlayers.map(player => {
+      if (player.id === id) {
+        return {
+          ...player,
+          score: player.score + delta
+        }
+      }
+      return player;
+    }));
   }
 
   return (
-    <div className='grocery-list'>
+    <div className='scoreboard'>
       <Header
         title='Scoteboard'
         playerTotal={players.length}
@@ -41,8 +53,9 @@ export function App() {
           key={player.id}
           id={player.id}
           name={player.name}
-          removeplayer={handleRemoveplayer}
           score={player.score}
+          removeplayer={handleRemoveplayer}
+          changeScore={handleScoreChange}
         />
       )}
     </div>

@@ -9,7 +9,11 @@ export const Player = (props) => {
         {props.name}
       </span>
 
-      <Counter score={props.score} />
+      <Counter
+        score={props.score}
+        id={props.id}
+        changeScore={props.changeScore}
+      />
     </div>
   );
 }
