@@ -30,5 +30,5 @@ export function AddPlayerForm({ addPlayer }) {
 }
 
 AddPlayerForm.propTypes = {
-  addPlayer: PropTypes.func
+  addPlayer: PropTypes.func.isRequired
 };

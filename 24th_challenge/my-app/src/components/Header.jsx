@@ -15,5 +15,9 @@ export function Header({ players, title }) {
 
 Header.PropTypes = {
   title: PropTypes.string,
-  players: PropTypes.arrayOf(PropTypes.object)
+  players: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
+Header.defaultProps = {
+  title: 'Scoreboard'
 }

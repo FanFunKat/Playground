@@ -24,9 +24,7 @@ export function Stats({ players }) {
 }
 
 Stats.propTypes = {
-  players: PropTypes.arrayOf(
-    PropTypes.shape({
-      score: PropTypes.number
-    })
-  )
+  players: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.number
+  })).isRequired
 };
