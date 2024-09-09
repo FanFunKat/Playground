@@ -7,6 +7,7 @@ function Player({ name, id, score, removePlayer, changeScore }) {
     <div className="player">
       <span className="player-name">
         <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
+
         {name}
       </span>
 
