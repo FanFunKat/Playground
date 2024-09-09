@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { Header } from './components/Header';
 import Player from './components/Player';
@@ -28,7 +28,10 @@ export function App() {
     }
   ]);
 
-  const [nextPlayerId, settNextPlayerId] = useState(5);
+  // const [nextPlayerId, settNextPlayerId] = useState(5);
+
+  const nextPlayerId = useRef(5);
+
 
   const handleRemoveplayer = (id) => {
     setPlayers(players.filter(player => player.id !== id));
@@ -52,10 +55,10 @@ export function App() {
       {
         name,
         score: 0,
-        id: nextPlayerId
+        id: nextPlayerId.current++
       }
     ]);
-    settNextPlayerId(prevId => prevId + 1);
+    // settNextPlayerId(prevId => prevId + 1);
   }
 
   return (
