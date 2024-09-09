@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-export function AddPlayerForm(props) {
+export function AddPlayerForm({ addPlayer }) {
   const [value, setValue] = useState("");
 
   const handlerSubmit = event => {
     event.preventDefault();
-    props.addPlayer(value);
+    addPlayer(value);
     setValue("");
   };
 
