@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { Player } from './components/Player';
+import { AddPlayerForm } from './components/AddPlayerForm';
 
 export function App() {
   const [players, setPlayers] = useState([
@@ -58,6 +59,7 @@ export function App() {
           changeScore={handleScoreChange}
         />
       )}
+      <AddPlayerForm />
     </div>
   )
 }
