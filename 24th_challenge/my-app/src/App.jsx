@@ -46,7 +46,7 @@ export function App() {
     <div className='scoreboard'>
       <Header
         title='Scoteboard'
-        playerTotal={players.length}
+        players={players}
       />
       {players.map(player =>
         <Player
