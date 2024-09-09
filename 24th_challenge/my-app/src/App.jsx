@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { Header } from './components/Header';
 import Player from './components/Player';
@@ -29,8 +29,13 @@ export function App() {
   ]);
 
   // const [nextPlayerId, settNextPlayerId] = useState(5);
-
+  const [highScore, setHighScore] = useState();
   const nextPlayerId = useRef(5);
+
+  useEffect(() => {
+    const scores = players.map(player => player.score);
+    setHighScore(Math.max(...scores));
+  }, [players]);
 
 
   const handleRemovePlayer = (id) => {
@@ -75,6 +80,7 @@ export function App() {
           score={player.score}
           removePlayer={handleRemovePlayer}
           changeScore={handleScoreChange}
+          isHighScore={player.score === highScore && highScore !== 0}
         />
       )}
       <AddPlayerForm addPlayer={handleAddPlayer} />
