@@ -33,7 +33,7 @@ export function App() {
   const nextPlayerId = useRef(5);
 
 
-  const handleRemoveplayer = (id) => {
+  const handleRemovePlayer = (id) => {
     setPlayers(players.filter(player => player.id !== id));
   }
 
@@ -64,7 +64,7 @@ export function App() {
   return (
     <div className='scoreboard'>
       <Header
-        // title='Scoteboard'
+        title='Scoteboard'
         players={players}
       />
       {players.map(player =>
@@ -73,7 +73,7 @@ export function App() {
           id={player.id}
           name={player.name}
           score={player.score}
-          removeplayer={handleRemoveplayer}
+          removePlayer={handleRemovePlayer}
           changeScore={handleScoreChange}
         />
       )}

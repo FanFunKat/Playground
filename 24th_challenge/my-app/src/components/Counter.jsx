@@ -11,7 +11,7 @@ export function Counter({ score, id, changeScore }) {
   );
 }
 
-Counter.PropTypes = {
+Counter.propTypes = {
   id: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
   changeScore: PropTypes.func.isRequired
