@@ -69,7 +69,7 @@ export function App() {
   return (
     <div className='scoreboard'>
       <Header
-        title='Scoteboard'
+        title='Scoreboard'
         players={players}
       />
       {players.map(player =>

@@ -50,6 +50,8 @@ Small and larger projects related to various educational platforms. So that I wo
 
 ### REACT
 
-22nd challenge -  App 'Grocery List' React Basics! - very basic, very no no. I'll be back!
+22nd challenge -  App 'Grocery List' React Basics! - very basic app
 
 23rd challenge -  displaying planet cards
+
+24th challenge -  'Scoreboard' app with React - useState, useRef, useEffect, reused components frm 22nd challenge
