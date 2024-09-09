@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 
-export function AddPlayerForm() {
+export function AddPlayerForm(props) {
   const [value, setValue] = useState("");
 
+  const handlerSubmit = event => {
+    event.preventDefault();
+    props.addPlayer(value);
+    setValue("");
+  };
+
   return (
-    <form>
+    <form onSubmit={event => handlerSubmit(event)}>
       <input
         type="text"
         value={value}
