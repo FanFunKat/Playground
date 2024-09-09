@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { Counter } from "./Counter"
 
-export const Player = (props) => {
+function Player(props) {
   return (
     <div className="player">
       <span className="player-name">
@@ -17,3 +17,9 @@ export const Player = (props) => {
     </div>
   );
 }
+
+const playerPropsAreEqual = (prevProps, nextProps) => {
+  return prevProps.score === nextProps.score && prevProps.name === nextProps.name;
+}
+
+export default memo(Player, playerPropsAreEqual);

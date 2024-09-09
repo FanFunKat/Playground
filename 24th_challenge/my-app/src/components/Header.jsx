@@ -2,7 +2,7 @@ import React from 'react'
 import { Stats } from './Stats';
 import { Stopwatch } from './Stopwatch';
 
-export const Header = (props) => {
+export function Header(props) {
   return (
     <header>
       <Stats players={props.players} />

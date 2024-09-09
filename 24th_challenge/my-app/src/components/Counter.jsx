@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Counter = (props) => {
+export function Counter(props) {
   const id = props.id;
 
   return (
