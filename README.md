@@ -55,3 +55,5 @@ Small and larger projects related to various educational platforms. So that I wo
 23rd challenge -  displaying planet cards
 
 24th challenge -  'Scoreboard' app with React - useState, useRef, useEffect, reused components frm 22nd challenge
+
+25th challenge - 'Star rating'
