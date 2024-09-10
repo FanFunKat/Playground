@@ -8,11 +8,12 @@ const StarRating = () => {
 	// Write a function that returns 5 Star components
 	const renderStars = () => {
 		const starsArray = [];
-		for (let i = 0; i < 5; i++) {
+		const maxRating = 5;
+		for (let i = 0; i < maxRating; i++) {
 			starsArray.push(<Star
 				key={i}
-				isSelected={i <= courseRating}
-				handleClick={() => updateRating(i)}
+				isSelected={i < courseRating}
+				setRating={() => updateRating(i + 1)}
 			/>);
 		}
 		return starsArray;
@@ -22,7 +23,12 @@ const StarRating = () => {
 	// Pass the function to a Star component via props
 
 	const updateRating = (rating) => {
-		setCourseRating(rating);
+		if (courseRating === rating) { //resets rating to 0
+			setCourseRating(0);
+			return;
+		} else {
+			setCourseRating(rating);
+		}
 	};
 
 	return (
