@@ -57,3 +57,5 @@ Small and larger projects related to various educational platforms. So that I wo
 24th challenge -  'Scoreboard' app with React - useState, useRef, useEffect, reused components frm 22nd challenge
 
 25th challenge - 'Star rating'
+
+26th challenge - 'GifSearch' - fetching data from Giphy API
