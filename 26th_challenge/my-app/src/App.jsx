@@ -3,16 +3,6 @@ import SearchForm from './Components/SearchForm';
 import GifList from "./Components/GifList";
 
 function App() {
-  const [gifs, setGifs] = useState([]);
-  useEffect(() => {
-    fetch("")
-      .then(response => response.json())
-      .then(responseData => { setGifs(responseData.data) })
-      .catch(error => {
-        console.error("Error fetching and parsing data:", error)
-      });
-  }, []);
-
   return (
     <div>
       <div className="main-header">
