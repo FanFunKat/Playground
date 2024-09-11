@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SearchForm from './Components/SearchForm';
 import GifList from "./Components/GifList";
 
