@@ -5,13 +5,20 @@ import GifList from "./Components/GifList";
 
 function App() {
   const [gifs, setGifs] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("cats");
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    setLoading(true);
     let activeFetch = true;
     const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
     axios.get(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${apiKey}&limit=24&rating=g`)
       .then(response => {
-        if (activeFetch) { setGifs(response.data.data) }
+        if (activeFetch) {
+          setGifs(response.data.data)
+          setLoading(false);
+        }
+
       })
       .catch(error => console.error("Error fetching data:", error));
     return () => { activeFetch = false; }
@@ -34,7 +41,11 @@ function App() {
         </div>
       </div>
       <div className="main-content">
-        <GifList data={gifs} />
+        {
+          (loading)
+            ? <p>Loading...</p>
+            : <GifList data={gifs} />
+        }
       </div>
     </div>
   );
