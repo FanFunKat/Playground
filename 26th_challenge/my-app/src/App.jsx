@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchForm from './Components/SearchForm';
 import GifList from "./Components/GifList";
 
 function App() {
+  const [gifs, setGifs] = useState([]);
+  useEffect(() => {
+    const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
+    fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24&rating=g`)
+      .then(response => response.json())
+      .then(data => setGifs(data.data))
+      .catch(error => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <div>
       <div className="main-header">
