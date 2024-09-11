@@ -5,7 +5,7 @@ import GifList from "./Components/GifList";
 function App() {
   const [gifs, setGifs] = useState([]);
   useEffect(() => {
-    fetch("https://api.giphy.com/v1/gifs/trending?api_key=r3EcdDb2hI0q2TRbgnvBje8G8h7FT5J2&limit=24&rating=g")
+    fetch("")
       .then(response => response.json())
       .then(responseData => { setGifs(responseData.data) })
       .catch(error => {
