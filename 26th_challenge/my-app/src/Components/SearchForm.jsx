@@ -5,18 +5,19 @@ const SearchForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    props.changeQuery(searchText);
     e.currentTarget.reset()
   }
 
   return (
     <form className="search-form" onSubmit={e => handleSubmit(e)} >
       <label className="is-hidden" htmlFor="search">Search</label>
-      <input type="search" 
-             onChange={e => setSearchText(e.target.value)}
-             name="search" 
-             placeholder="Search..." />
+      <input type="search"
+        onChange={e => setSearchText(e.target.value)}
+        name="search"
+        placeholder="Search..." />
       <button type="submit" id="submit" className="search-button"><i className="material-icons icn-search">search</i></button>
-    </form>      
+    </form>
   );
 }
 
