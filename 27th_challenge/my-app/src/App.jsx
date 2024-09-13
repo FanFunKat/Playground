@@ -6,6 +6,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Teachers from "./components/Teachers";
 import Courses from "./components/Courses";
+import HTML from './components/courses/HTML.jsx';
+import CSS from './components/courses/CSS.jsx';
+import JavaScript from './components/courses/JavaScript.jsx';
 
 
 function App() {
@@ -14,9 +17,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/teachers" element={<Teachers />} />
-        <Route path="/courses/*" element={<Courses />} />
+        <Route path="about" element={<About />} />
+        <Route path="teachers" element={<Teachers />} />
+        <Route path="courses" element={<Courses />} >
+          <Route path="html" element={<HTML />} />
+          <Route path="css" element={<CSS />} />
+          <Route path="javascript" element={<JavaScript />} />
+        </Route>
       </Routes>
     </div>
   );
