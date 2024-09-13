@@ -8,7 +8,7 @@ const Header = () => (
       <li><a href="#">About</a></li>
       <li><a href="#">Teachers</a></li>
       <li><a href="#">Courses</a></li>
-    </ul>    
+    </ul>
   </header>
 );
 
