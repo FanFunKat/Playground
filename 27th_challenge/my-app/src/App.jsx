@@ -6,10 +6,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Teachers from "./components/Teachers";
 import Courses from "./components/Courses";
-import HTML from './components/courses/HTML.jsx';
-import CSS from './components/courses/CSS.jsx';
-import JavaScript from './components/courses/JavaScript.jsx';
+import CourseContainer from './components/courses/CourseContainer.jsx';
 import NotFound from "./components/NotFound";
+import { HTMLCourses, CSSCourses, JSCourses } from './data/courses';
 
 
 function App() {
@@ -22,9 +21,9 @@ function App() {
         <Route path="teachers" element={<Teachers />} />
         <Route path="courses" element={<Courses />} >
           <Route index element={<Navigate replace to="html" />} />
-          <Route path="html" element={<HTML />} />
-          <Route path="css" element={<CSS />} />
-          <Route path="javascript" element={<JavaScript />} />
+          <Route path="html" element={<CourseContainer data={HTMLCourses} />} />
+          <Route path="css" element={<CourseContainer data={CSSCourses} />} />
+          <Route path="javascript" element={<CourseContainer data={JSCourses} />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
