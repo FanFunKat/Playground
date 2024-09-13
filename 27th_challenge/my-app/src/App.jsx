@@ -9,6 +9,7 @@ import Courses from "./components/Courses";
 import HTML from './components/courses/HTML.jsx';
 import CSS from './components/courses/CSS.jsx';
 import JavaScript from './components/courses/JavaScript.jsx';
+import NotFound from "./components/NotFound";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="css" element={<CSS />} />
           <Route path="javascript" element={<JavaScript />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
