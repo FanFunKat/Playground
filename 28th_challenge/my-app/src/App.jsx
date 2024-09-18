@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 
 // App Components
@@ -11,40 +10,20 @@ import NotFound from "./components/NotFound"
 
 function App() {
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [accentColor, setAccentColor] = useState('#63537d');
-  const [fontPercentage, setFontPercentage] = useState(100);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-    document.body.style.fontSize = `${fontPercentage}%`;
-  }, [isDarkMode, fontPercentage]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(currentMode => !currentMode);
-  }
-
   return (
 
     <div>
-      <Header
-        accentColor={accentColor} />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="signin" element={<UserSignIn accentColor={accentColor} />} />
+        <Route path="signin" element={<UserSignIn />} />
         <Route path="signout" element={<UserSignOut />} />
         <Route path="settings" element={
           <Settings
             isDarkMode={isDarkMode}
             toggleDarkMode={toggleDarkMode}
             accentColor={accentColor}
-            updateAccentColor={setAccentColor}
-            fontPercentage={fontPercentage}
-            updateFontPercentage={setFontPercentage} />
+            updateAccentColor={setAccentColor} />
         } />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -28,10 +28,7 @@ function Settings(props) {
         <AccentColor
           accentColor={props.accentColor}
           updateAccentColor={props.updateAccentColor} />
-        <FontSize
-          accentColor={props.accentColor}
-          fontPercentage={props.fontPercentage}
-          updateFontPercentage={props.updateFontPercentage} />
+        <FontSize />
       </div>
     </div>
   );
