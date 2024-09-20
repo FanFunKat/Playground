@@ -18,13 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="signin" element={<UserSignIn />} />
         <Route path="signout" element={<UserSignOut />} />
-        <Route path="settings" element={
-          <Settings
-            isDarkMode={isDarkMode}
-            toggleDarkMode={toggleDarkMode}
-            accentColor={accentColor}
-            updateAccentColor={setAccentColor} />
-        } />
+        <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
