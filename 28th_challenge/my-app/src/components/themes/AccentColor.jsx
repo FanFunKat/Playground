@@ -16,7 +16,7 @@ const AccentColor = () => {
         colors={['#F78DA7', '#FF5E5E', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#63537d']}
 
         color={accentColor}
-        onChange={(color) => updateAccentColor(color.hex)} />
+        onChange={(color) => actions.updateAccentColor(color.hex)} />
       <br />
     </div>
   )
