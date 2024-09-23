@@ -1,5 +1,5 @@
-import { useRef, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRef, useContext, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../context/UserContrxt';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -9,6 +9,8 @@ const UserSignIn = () => {
   // State
   const username = useRef(null);
   const password = useRef(null);
+  const [errors, setErrors] = useState([]);
+
 
   const navigate = useNavigate();
 
@@ -29,6 +31,16 @@ const UserSignIn = () => {
       <div className="grid-33 centered signin">
         <h1>Sign In</h1>
         <div>
+          {errors.length ? (
+            <div>
+              <h2 className="validation--errors--label">Validation errors</h2>
+              <div className="validation-errors">
+                <ul>
+                  {errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
+              </div>
+            </div>
+          ) : null}
           <form onSubmit={handleSubmit}>
             <input
               id="username"
@@ -48,6 +60,9 @@ const UserSignIn = () => {
             </div>
           </form>
         </div>
+        <p>
+          Don't have a user account? <Link style={{ color: accentColor }} to="/signup">Click here</Link> to sign up!
+        </p>
       </div>
     </div>
   );

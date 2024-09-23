@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const FontSize = () => {
   const { fontPercentage, accentColor, actions } = useContext(ThemeContext);
+
   return (
     <div>
       <h3>Adjust Font Size</h3>
