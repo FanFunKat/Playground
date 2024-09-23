@@ -59,3 +59,7 @@ Small and larger projects related to various educational platforms. So that I wo
 25th challenge - 'Star rating'
 
 26th challenge - 'GifSearch' - fetching data from Giphy API
+
+27th challenge - React Router: Routes, Poutes, Links, NavLinks, Navigate, useNavigate, useParams, useRef
+
+28th challenge - React Router: useContext - theme switcher, accent color, font size

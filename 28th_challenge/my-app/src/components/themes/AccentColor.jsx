@@ -1,5 +1,5 @@
 import { TwitterPicker } from 'react-color';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const AccentColor = () => {
