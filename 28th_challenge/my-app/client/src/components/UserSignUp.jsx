@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeContext from '../context/ThemeContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 const UserSignIn = () => {
   const { accentColor } = useContext(ThemeContext);
@@ -25,7 +25,7 @@ const UserSignIn = () => {
       <div className="grid-33 centered signin">
         <h1>Sign up</h1>
         <div>
-        {errors.length ? (
+          {errors.length ? (
             <div>
               <h2 className="validation--errors--label">Validation errors</h2>
               <div className="validation-errors">
@@ -34,7 +34,7 @@ const UserSignIn = () => {
                 </ul>
               </div>
             </div>
-          ) : null }
+          ) : null}
           <form onSubmit={handleSubmit}>
             <input
               id="name"
