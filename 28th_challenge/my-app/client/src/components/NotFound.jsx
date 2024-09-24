@@ -1,4 +1,4 @@
-export default function NotFound() {
+function NotFound() {
   return (
     <div className="bounds">
       <h1>Not Found</h1>
@@ -6,3 +6,5 @@ export default function NotFound() {
     </div>
   );
 };
+
+export default NotFound;
