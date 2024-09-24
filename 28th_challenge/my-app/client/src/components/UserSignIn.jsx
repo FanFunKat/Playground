@@ -1,29 +1,59 @@
 import { useRef, useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { UserContext } from '../context/UserContrxt';
+// import { UserContext } from '../context/UserContrxt';
 import { ThemeContext } from '../context/ThemeContext';
 
 const UserSignIn = () => {
-  const { actions } = useContext(UserContext);
+  // const { actions } = useContext(UserContext);
   const { accentColor } = useContext(ThemeContext);
   // State
   const username = useRef(null);
   const password = useRef(null);
   const [errors, setErrors] = useState([]);
-
-
   const navigate = useNavigate();
 
   // Event Handlers
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    actions.signIn(username.current.value, password.current.value);
-    navigate("/");
+
+    const credentials = {
+      username: username.current.value,
+      password: password.current.value
+    }
+
+    const encodedCredentials = btoa(`${credentials.username}:${credentials.password}`);
+
+    const fetchOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Authorization": `Basic ${encodedCredentials}`
+      }
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/users", fetchOptions);
+      if (response.status === 200) {
+        const user = await response.json();
+        console.log(`SUCCESS! ${user.username} is signed in!`);
+        navigate("/authenticated");
+      } else if (response.status === 401) {
+        setErrors(["Sign-in was unsuccessful"]);
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      console.log(error);
+      navigate("/error");
+    }
+
+    // actions.signIn(username.current.value, password.current.value);
+    // navigate("/");
   }
 
   const handleCancel = (event) => {
     event.preventDefault();
-    navigate('/');
+    navigate("/");
   }
 
   return (

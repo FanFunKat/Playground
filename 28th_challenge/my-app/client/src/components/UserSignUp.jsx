@@ -30,9 +30,8 @@ const UserSignIn = () => {
       body: JSON.stringify(user)
     }
 
-    const response = await fetch('http://localhost:5000/api/users', fetchOptions);
-
     try {
+      const response = await fetch('http://localhost:5000/api/users', fetchOptions);
       if (response.status === 201) {
         console.log(`${user.username} signed up successfully!`);
       } else if (response.status === 400) {
