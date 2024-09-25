@@ -1,12 +1,12 @@
 import { useRef, useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-// import { UserContext } from '../context/UserContrxt';
+import { UserContext } from '../context/UserContrxt';
 import { ThemeContext } from '../context/ThemeContext';
 
 const UserSignIn = () => {
-  // const { actions } = useContext(UserContext);
+  const { actions } = useContext(UserContext);
   const { accentColor } = useContext(ThemeContext);
-  // State
+
   const username = useRef(null);
   const password = useRef(null);
   const [errors, setErrors] = useState([]);
@@ -21,27 +21,16 @@ const UserSignIn = () => {
       password: password.current.value
     }
 
-    const encodedCredentials = btoa(`${credentials.username}:${credentials.password}`);
-
-    const fetchOptions = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8",
-        "Authorization": `Basic ${encodedCredentials}`
-      }
-    };
-
     try {
-      const response = await fetch("http://localhost:5000/api/users", fetchOptions);
-      if (response.status === 200) {
-        const user = await response.json();
-        console.log(`SUCCESS! ${user.username} is signed in!`);
+      const user = await actions.signIn(credentials);
+      if (user) {
         navigate("/authenticated");
-      } else if (response.status === 401) {
-        setErrors(["Sign-in was unsuccessful"]);
       } else {
-        throw new Error();
+        setErrors(["Sign-in was unsuccessful"]);
       }
+      //TODO: Get user from UserContext
+      // success (user !== nul) -> navigate("/authenticated");
+      // failure (user === null) -> update errors state;
     } catch (error) {
       console.log(error);
       navigate("/error");
