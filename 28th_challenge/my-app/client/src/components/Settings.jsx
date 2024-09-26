@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContrxt";
+import { UserContext } from "../context/UserContext";
 
 //Components
 import DarkMode from "./themes/DarkMode";
