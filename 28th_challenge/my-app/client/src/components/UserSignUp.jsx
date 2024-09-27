@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { api } from '../utils/apiHelper';
 
 import ErrorDisplay from './ErrorDisplay';
 import { ThemeContext } from '../context/ThemeContext';
@@ -26,16 +27,16 @@ const UserSignIn = () => {
       password: password.current.value,
     }
 
-    const fetchOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8"
-      },
-      body: JSON.stringify(user)
-    }
+    // const fetchOptions = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json; charset=UTF-8"
+    //   },
+    //   body: JSON.stringify(user)
+    // }
 
     try {
-      const response = await fetch('http://localhost:5000/api/users', fetchOptions);
+      const response = await api("/users", "POST", user);
       if (response.status === 201) {
         console.log(`${user.username} signed up successfully!`);
         await actions.signIn(user);
