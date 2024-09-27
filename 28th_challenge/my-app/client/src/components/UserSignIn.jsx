@@ -1,7 +1,10 @@
 import { useRef, useContext, useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
+
+import ErrorDisplay from './ErrorDisplay';
 import { UserContext } from '../context/UserContext';
 import { ThemeContext } from '../context/ThemeContext';
+
 
 const UserSignIn = () => {
   const { actions } = useContext(UserContext);
@@ -52,16 +55,7 @@ const UserSignIn = () => {
       <div className="grid-33 centered signin">
         <h1>Sign In</h1>
         <div>
-          {errors.length ? (
-            <div>
-              <h2 className="validation--errors--label">Validation errors</h2>
-              <div className="validation-errors">
-                <ul>
-                  {errors.map((error, i) => <li key={i}>{error}</li>)}
-                </ul>
-              </div>
-            </div>
-          ) : null}
+          <ErrorDisplay errors={errors} />
           <form onSubmit={handleSubmit}>
             <input
               id="username"
