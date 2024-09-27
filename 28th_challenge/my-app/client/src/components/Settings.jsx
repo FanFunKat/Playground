@@ -8,12 +8,12 @@ import AccentColor from "./themes/AccentColor";
 import FontSize from "./themes/FontSize";
 
 function Settings() {
-  const { user } = useContext(UserContext);
+  const { authUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   // If the user isn't logged in navigate them to signin route
   useEffect(() => {
-    if (user === null) {
+    if (authUser === null) {
       navigate('/signin', { replace: true });
     }
   })
