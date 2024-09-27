@@ -9,6 +9,7 @@ import UserSignUp from "./components/UserSignUp"
 import Settings from "./components/Settings"
 import Authenticated from "./components/Authenticated"
 import NotFound from "./components/NotFound"
+import PrivateRoute from "./components/PrivateRoute"
 
 function App() {
 
@@ -18,11 +19,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="authenticated" element={<Authenticated />} />
         <Route path="signin" element={<UserSignIn />} />
         <Route path="signup" element={<UserSignUp />} />
         <Route path="signout" element={<UserSignOut />} />
-        <Route path="settings" element={<Settings />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="authenticated" element={<Authenticated />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
