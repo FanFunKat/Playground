@@ -33,16 +33,10 @@ const UserSignIn = () => {
       } else {
         setErrors(["Sign-in was unsuccessful"]);
       }
-      //TODO: Get user from UserContext
-      // success (user !== nul) -> navigate("/authenticated");
-      // failure (user === null) -> update errors state;
     } catch (error) {
       console.log(error);
       navigate("/error");
     }
-
-    // actions.signIn(username.current.value, password.current.value);
-    // navigate("/");
   }
 
   const handleCancel = (event) => {
