@@ -3,18 +3,19 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const Nav = () => {
-  const { user } = useContext(UserContext);
+  const { authUser } = useContext(UserContext);
   return (
     <nav>
       {
-        user ? (
+        authUser ? (
           <>
+            <span>Welcome {authUser.username}</span>
             <Link to="/settings">Settings</Link>
             <Link to="/signout">Sign Out</Link>
           </>
         ) : (
           <>
-            <Link className="signin" to="/signup">Sign Up</Link>
+            <Link className="signup" to="/signup">Sign Up</Link>
             <Link className="signin" to="/signin">Sign In</Link>
           </>
         )

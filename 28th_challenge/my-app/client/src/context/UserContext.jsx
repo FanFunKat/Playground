@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const UserContext = createContext(null);
 
 export const UserProvider = (props) => {
-  const [autUser, setAutUser] = useState(null);
+  const [authUser, setAuthUser] = useState(null);
 
   const signIn = async (credentials) => {
 
@@ -20,7 +20,7 @@ export const UserProvider = (props) => {
     const response = await fetch("http://localhost:5000/api/users", fetchOptions);
     if (response.status === 200) {
       const user = await response.json();
-      setAutUser(user);
+      setAuthUser(user);
       return user;
     } else if (response.status === 401) {
       return
@@ -29,11 +29,16 @@ export const UserProvider = (props) => {
     }
   }
 
+  const signOut = () => {
+    setAuthUser(null);
+  }
+
   return (
     <UserContext.Provider value={{
-      autUser,
+      authUser,
       actions: {
-        signIn
+        signIn,
+        signOut
       }
     }}>
       {props.children}
