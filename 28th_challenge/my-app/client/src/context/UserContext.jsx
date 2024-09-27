@@ -1,9 +1,11 @@
 import { createContext, useState } from "react";
+import Cookies from "js-cookie";
 
 export const UserContext = createContext(null);
 
 export const UserProvider = (props) => {
-  const [authUser, setAuthUser] = useState(null);
+  const cookie = Cookies.get("authenticatedUser");
+  const [authUser, setAuthUser] = useState(cookie ? JSON.parse(cookie) : null);
 
   const signIn = async (credentials) => {
 
@@ -21,6 +23,7 @@ export const UserProvider = (props) => {
     if (response.status === 200) {
       const user = await response.json();
       setAuthUser(user);
+      Cookies.set("authenticatedUser", JSON.stringify(user), { expires: 1 });
       return user;
     } else if (response.status === 401) {
       return
@@ -31,6 +34,7 @@ export const UserProvider = (props) => {
 
   const signOut = () => {
     setAuthUser(null);
+    Cookies.remove("authenticatedUser");
   }
 
   return (
