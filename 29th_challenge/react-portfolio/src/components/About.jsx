@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from './Link'
 
 const About = () => {
   return (
@@ -23,7 +24,7 @@ const About = () => {
         gained the knowledge and expertise, but also the confidence to tackle
         any web development challenge that comes my way.
       </p>
-      <a className="btn" href="#">Download my Resume</a>
+      <Link href="#">Download my Resume</Link>
     </section>
   )
 }

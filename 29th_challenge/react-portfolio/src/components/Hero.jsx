@@ -1,5 +1,6 @@
 import React from 'react'
 import porfileImage from '../assets/chuck.png'
+import Link from './Link'
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
         <h1>Katarzyna</h1>
         <p>Junior Frontend Developer</p>
         <p> Gdansk, Poland</p>
-        <a href='#projects' className='btn'>Check out my work</a>
+        <Link href='#projects'>Check out my work</Link>
       </div>
     </section>
   )
