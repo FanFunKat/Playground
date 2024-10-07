@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import menu from '../assets/open_menu.svg'
+import close from '../assets/close_menu.svg'
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header>
       <span>Katarzyna</span>
-      <button className='menu-btn'>
-        <img src={menu} alt='menu' />
+      <button className='menu-btn'
+        onClick={() => setIsOpen(!isOpen)} aria-label='Navigation Menu'
+        aria-expanded={isOpen}
+      >
+        <img src={isOpen ? close : menu} alt='menu' />
       </button>
-      <nav className='nav'>
+      <nav className={`nav ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <a href='#about'>About</a>
