@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 
 const Link = ({ href, children }) => {
   return (
@@ -7,3 +7,8 @@ const Link = ({ href, children }) => {
 }
 
 export default Link
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}

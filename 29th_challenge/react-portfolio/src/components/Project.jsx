@@ -25,6 +25,8 @@ const Project = ({ data, reverse }) => {
   )
 }
 
+export default Project
+
 Project.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -37,5 +39,3 @@ Project.propTypes = {
   }),
   reverse: PropTypes.bool.isRequired,
 }
-
-export default Project
