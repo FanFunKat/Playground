@@ -45,8 +45,8 @@ const Projects = () => {
     <section id='projects' className='divider'>
       <h2>My Projects</h2>
       <div>
-        {projectList.map((project) => (
-          <Project key={project.id} data={project} />
+        {projectList.map((project, i) => (
+          <Project key={project.id} data={project} reverse={i % 2 === 0} />
         ))}
       </div>
     </section>
