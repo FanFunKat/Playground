@@ -65,3 +65,5 @@ Small and larger projects related to various educational platforms. So that I wo
 28th challenge - React Router: useContext - theme switcher, accent color, font size. Basic authentication. Cookies.
 
 29th challenge - React - basic portfolio site
+
+30th challenge - TypeScript reminder
