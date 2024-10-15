@@ -8,10 +8,10 @@ class User {
   };
 
   constructor() {
-    this.name = 'John'
+    this.name = faker.name.firstName();
     this.location = {
-      lat: 0,
-      lng: 0
-    }
+      lat: faker.address.latitude(),
+      lng: faker.address.longitude()
+    };
   }
 }
