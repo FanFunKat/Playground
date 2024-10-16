@@ -67,3 +67,5 @@ Small and larger projects related to various educational platforms. So that I wo
 29th challenge - React - basic portfolio site
 
 30th challenge - TypeScript reminder
+
+31st challenge - Google Maps API, map with two markers, but I have tu update it to the latest version (change MArkers to Advanced Markers).
