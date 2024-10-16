@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@faker-js/faker": "^9.0.3",
+    "@types/google.maps": "^3.58.1",
     "parcel": "^2.12.0"
   },
   "devDependencies": {
