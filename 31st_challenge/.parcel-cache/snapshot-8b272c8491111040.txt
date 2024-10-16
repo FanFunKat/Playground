@@ -25,7 +25,7 @@
 45D:\0_FRONTnauka\Playground\31st_challenge\src133732891732602772 1
 75D:\0_FRONTnauka\Playground\31st_challenge\node_modules\lmdb\dependencies\v8133731354402166383 1
 104D:\0_FRONTnauka\Playground\31st_challenge\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\Makefile133731354355046514 0
-46D:\0_FRONTnauka\Playground\31st_challenge\dist133735468438292668 1
+46D:\0_FRONTnauka\Playground\31st_challenge\dist133735480681050416 1
 75D:\0_FRONTnauka\Playground\31st_challenge\node_modules\svgo\lib\svgo\coa.js133731354368939469 0
 121D:\0_FRONTnauka\Playground\31st_challenge\node_modules\css-select\node_modules\entities\lib\generated\decode-data-html.js133731354333541466 0
 82D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@swc\helpers\src\_throw.mjs133731354419240684 0
@@ -44,7 +44,7 @@
 99D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@swc\helpers\_\_super_prop_base\package.json133731354398087172 0
 94D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@faker-js\faker\dist\chunk-MZ2EUIY6.cjs133732901268983706 0
 104D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\package-manager\src\NodePackageManager.js133731354364154667 0
-52D:\0_FRONTnauka\Playground\31st_challenge\index.html133732287238563879 0
+52D:\0_FRONTnauka\Playground\31st_challenge\index.html133735480659288024 0
 100D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@swc\helpers\esm\_interop_require_wildcard.js133731354415879665 0
 83D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\workers\src\child.js133731354334568760 0
 76D:\0_FRONTnauka\Playground\31st_challenge\node_modules\import-fresh\index.js133731354314250526 0
@@ -93,7 +93,7 @@
 54D:\0_FRONTnauka\Playground\31st_challenge\src\index.ts133735468414025021 0
 81D:\0_FRONTnauka\Playground\31st_challenge\node_modules\css-what\lib\es\index.d.ts133731354361841034 0
 106D:\0_FRONTnauka\Playground\31st_challenge\node_modules\csso\node_modules\css-tree\lib\syntax\node\Block.js133731354402934204 0
-53D:\0_FRONTnauka\Playground\31st_challenge\src\Maps.ts133732891787861073 0
+53D:\0_FRONTnauka\Playground\31st_challenge\src\Maps.ts133735472957592121 0
 101D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\package-manager\test\fixtures\packages133731354358827154 1
 71D:\0_FRONTnauka\Playground\31st_challenge\node_modules\stable\README.md133731354315477200 0
 61D:\0_FRONTnauka\Playground\31st_challenge\node_modules\srcset133731354322298945 1
@@ -5520,7 +5520,7 @@
 134D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\DeclarationList.js133731354376709025 0
 128D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Dimension.js133731354377993236 0
 127D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Function.js133731354381673389 0
-68D:\0_FRONTnauka\Playground\31st_challenge\dist\index.b71e74eb.js.map133735468438283028 0
+68D:\0_FRONTnauka\Playground\31st_challenge\dist\index.b71e74eb.js.map133735480681040417 0
 129D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Identifier.js133731354385433339 0
 133D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\MediaQueryList.js133731354394596787 0
 122D:\0_FRONTnauka\Playground\31st_challenge\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Nth.js133731354395284619 0
@@ -6361,5 +6361,5 @@
 68D:\0_FRONTnauka\Playground\31st_challenge\node_modules\.bin\svgo.ps1133731354450191542 0
 82D:\0_FRONTnauka\Playground\31st_challenge\node_modules\.bin\update-browserslist-db133731354450191542 0
 86D:\0_FRONTnauka\Playground\31st_challenge\node_modules\.bin\update-browserslist-db.cmd133731354450191542 0
-64D:\0_FRONTnauka\Playground\31st_challenge\dist\index.b71e74eb.js133735468438113495 0
-57D:\0_FRONTnauka\Playground\31st_challenge\dist\index.html133735468433274107 0
+57D:\0_FRONTnauka\Playground\31st_challenge\dist\index.html133735480677410136 0
+64D:\0_FRONTnauka\Playground\31st_challenge\dist\index.b71e74eb.js133735480680851096 0
