@@ -1,7 +1,11 @@
 "use strict";
 // const numberArray = [0, 10, -1, 5];
+Object.defineProperty(exports, "__esModule", { value: true });
 // numberArray.sort()
 // console.log(numberArray)
-const sorter = new Sorter([10, 3, -5, 0]);
+const Sorter_1 = require("./Sorter");
+const NumbersCollection_1 = require("./NumbersCollection");
+const numbersCollection = new NumbersCollection_1.NumbersCollection([12057, -56, -588, 0]);
+const sorter = new Sorter_1.Sorter(numbersCollection);
 sorter.sort();
-console.log(sorter.collection);
+console.log(numbersCollection.data);
