@@ -1,8 +1,3 @@
-// const numberArray = [0, 10, -1, 5];
-
-// numberArray.sort()
-// console.log(numberArray)
-
 import { Sorter } from "./Sorter";
 import { NumbersCollection } from "./NumbersCollection";
 

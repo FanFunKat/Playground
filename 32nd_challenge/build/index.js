@@ -1,8 +1,5 @@
 "use strict";
-// const numberArray = [0, 10, -1, 5];
 Object.defineProperty(exports, "__esModule", { value: true });
-// numberArray.sort()
-// console.log(numberArray)
 const Sorter_1 = require("./Sorter");
 const NumbersCollection_1 = require("./NumbersCollection");
 const numbersCollection = new NumbersCollection_1.NumbersCollection([12057, -56, -588, 0]);
