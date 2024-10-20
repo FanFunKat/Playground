@@ -1,7 +1,13 @@
 import { Sorter } from "./Sorter";
 import { NumbersCollection } from "./NumbersCollection";
+import { CharactersCollection } from "./CharactersCollection";
 
-const numbersCollection = new NumbersCollection([12057, -56, -588, 0]);
+const numbersCollection = new NumbersCollection([11, -56, -588, 0]);
 const sorter = new Sorter(numbersCollection);
 sorter.sort();
 console.log(numbersCollection.data);
+
+const charactersCollection = new CharactersCollection("Xaayb");
+const sorter2 = new Sorter(charactersCollection);
+sorter2.sort();
+console.log(charactersCollection.data);
