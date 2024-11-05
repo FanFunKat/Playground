@@ -73,5 +73,9 @@ Small and larger projects related to various educational platforms. So that I wo
 31st challenge - Google Maps API, map with two markers.
 
 32nd challenge - Simple Sorter, TypeScript practise.
+ 
+33rd challenge - A simple database analysis and reporting application 
+
+
 
 
