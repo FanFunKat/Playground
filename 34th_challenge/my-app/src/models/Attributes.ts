@@ -2,7 +2,7 @@ export class Attributes<T extends object> {
 
   constructor(private data: T) { }
   // K - key
-  get<K extends keyof T>(propName: K): T[K] {
+  get = <K extends keyof T>(propName: K): T[K] => {
     return this.data[propName];
   }
 
