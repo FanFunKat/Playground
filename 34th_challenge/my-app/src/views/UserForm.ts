@@ -1,10 +1,17 @@
+import { User } from '../models/User';
+
 export class UserForm {
-  constructor(public parent: Element) { }
+  constructor(public parent: Element, public model: User) { }
 
   eventsMap(): { [key: string]: () => void } {
     return {
       'click:button': this.onButtonClick,
+      'mouseenter:h1': this.onHeaderHover,
     };
+  }
+
+  onHeaderHover(): void {
+    console.log('Header Hovered');
   }
 
   onButtonClick(): void {
@@ -15,7 +22,8 @@ export class UserForm {
     return `
       <div>
         <h1>User Form</h1>
-        <div>User Name</div>
+        <div>User Name: ${this.model.get('name')}</div>
+        <div>User Name: ${this.model.get('age')}</div>
         <input />
         <button>Click Me</button>
       </div>
