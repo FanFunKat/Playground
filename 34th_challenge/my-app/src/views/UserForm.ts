@@ -5,17 +5,12 @@ export class UserForm {
 
   eventsMap(): { [key: string]: () => void } {
     return {
-      'click:button': this.onButtonClick,
-      'mouseenter:h1': this.onHeaderHover,
+      'click:.set-age': this.onSetAgeClick,
     };
   }
 
-  onHeaderHover(): void {
-    console.log('Header Hovered');
-  }
-
-  onButtonClick(): void {
-    console.log('Button Clicked');
+  onSetAgeClick = (): void => {
+    this.model.setRandomAge();
   }
 
   templete(): string {
@@ -26,6 +21,7 @@ export class UserForm {
         <div>User Name: ${this.model.get('age')}</div>
         <input />
         <button>Click Me</button>
+        <button classNsme="set-age">Set Random Age</button>
       </div>
     `;
   }
