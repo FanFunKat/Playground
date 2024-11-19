@@ -18,6 +18,7 @@ export class UserForm {
   }
 
   onSetAgeClick = (): void => {
+    console.log('Set Age button was clicked');
     this.model.setRandomAge();
   }
 
@@ -29,7 +30,7 @@ export class UserForm {
         <div>User Name: ${this.model.get('age')}</div>
         <input />
         <button>Click Me</button>
-        <button classNsme="set-age">Set Random Age</button>
+        <button class="set-age">Set Random Age</button>
       </div>
     `;
   }
