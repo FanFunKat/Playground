@@ -74,8 +74,7 @@ Small and larger projects related to various educational platforms. So that I wo
 
 32nd challenge - Simple Sorter, TypeScript practise.
  
-33rd challenge - A simple database analysis and reporting application 
+33rd challenge - A simple database analysis and reporting application
 
-
-
+34th challenge - Web Framwork - TS
 
