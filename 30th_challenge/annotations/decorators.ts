@@ -1,4 +1,5 @@
 class Boat {
+  @testDecorator
   color: string = 'red';
 
   get formattedColor(): string {
@@ -11,6 +12,12 @@ class Boat {
     console.log('swish')
   };
 }
+
+function testDecorator(target: any, key: string) {
+  console.log('Target: ', target);
+  console.log('Key: ', key);
+}
+
 function logError(errorMessage: string) {
   return function (target: any, key: string, desc: PropertyDescriptor): void {
     const method = desc.value;
