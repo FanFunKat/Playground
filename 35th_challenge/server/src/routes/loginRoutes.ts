@@ -16,7 +16,6 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
 
 const router = Router();
 
-// // Lol nie widzi pierwszego diva
 router.get('/login', (req: Request, res: Response) => {
   res.send(`
     <form method="POST">
