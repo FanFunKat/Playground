@@ -10,6 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var decorators_1 = require("./decorators"); // compact then before
+function logger(req, res, next) {
+    console.log('Request was made!');
+    next();
+}
 var LoginController = /** @class */ (function () {
     function LoginController() {
     }
@@ -19,6 +23,7 @@ var LoginController = /** @class */ (function () {
     ;
     __decorate([
         (0, decorators_1.get)('/login'),
+        (0, decorators_1.use)(logger),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object, Object]),
         __metadata("design:returntype", void 0)
