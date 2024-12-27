@@ -27,19 +27,18 @@ exports.router = router;
 //     </form>
 //   `);
 // });
-router.post('/login', function (req, res) {
-    var _a = req.body, email = _a.email, password = _a.password;
-    if (email && password && email === 'hi@hi.com' && password === 'password') {
-        // mark this person as logged in
-        req.session = { loggedIn: true };
-        // redirect them to the root route
-        res.redirect('/');
-        res.send(email + password);
-    }
-    else {
-        res.send('Invalid email or password');
-    }
-});
+// router.post('/login', (req: RequestWithBody, res: Response) => {
+//   const { email, password } = req.body;
+//   if (email && password && email === 'hi@hi.com' && password === 'password') {
+//     // mark this person as logged in
+//     req.session = { loggedIn: true };
+//     // redirect them to the root route
+//     res.redirect('/');
+//     res.send(email + password);
+//   } else {
+//     res.send('Invalid email or password');
+//   }
+// });
 router.get('/', function (req, res) {
     if (req.session && req.session.loggedIn) {
         res.send("\n      <div>\n        <div>You are logged in</div>\n        <a href=\"/logout\">Logout</a>\n      </div>\n    ");
