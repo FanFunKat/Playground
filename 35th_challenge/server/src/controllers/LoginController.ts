@@ -8,6 +8,7 @@ import { get, controller, bodyValidator, post } from "./decorators"; // compact 
 
 @controller('/auth')
 class LoginController {
+
   @get('/login')
   // @use(logger)
   getLogin(req: Request, res: Response): void {
