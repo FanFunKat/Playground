@@ -10,8 +10,8 @@ interface FieldProps {
 export function Field({ value, onChange }: FieldProps) {
   return (
     <div className="field">
-      <Flower className="flower-right" fill="rgb(110, 146, 119)" />
-      <Flower className="flower-left" fill="rgb(249, 148, 59)" />
+      {/* <Flower className="flower-right" fill="rgb(110, 146, 119)" />
+      <Flower className="flower-left" fill="rgb(249, 148, 59)" /> */}
       <h1>Translate App</h1>
       <label>Enter English</label>
       <input

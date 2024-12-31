@@ -33,7 +33,7 @@ const useTranslation = (text: string, language: string): [string] => {
       try {
         cancelToken.cancel();
       } catch (err) {
-        console.log(err)
+        console.error('Error translating:', err);
       }
     };
   }, [text, language]);
@@ -64,7 +64,7 @@ const doTranslation = debounce(
   ) => {
     try {
       const { data } = await axios.post(
-        "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA",
+        "https://translation.googleapis.com/language/translate/v2?key=${API_KEY}",//don't have API key soo it won't work here :(
         {
           q: input,
           target: languageCode,
@@ -75,7 +75,7 @@ const doTranslation = debounce(
       callback(data.data.translations[0].translatedText);
     } catch (err) {
       callback("");
-      console.log(err)
+      console.error('Error translating:', err);
     }
   }
 );
