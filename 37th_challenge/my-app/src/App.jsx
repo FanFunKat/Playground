@@ -12,10 +12,19 @@ function App() {
   // const date = new Date();
   // const time = date.toLocaleTimeString();
 
+  const inputType = 'number';
+  const minValue = 5
+
   return (
-    <div className="App">
+    <div className='App'>
       <h1>{new Date().toLocaleTimeString()}</h1>
       <h2>{message} {name}</h2>
+      <input
+        type={inputType}
+        min={minValue}
+        max={20}
+        style={{ border: '3px solid red' }}
+      />
     </div>
   )
 }
