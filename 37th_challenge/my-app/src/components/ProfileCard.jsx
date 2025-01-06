@@ -7,9 +7,10 @@
 //   )
 // }
 
-export function ProfileCard({ title, handle }) { //destructuring
+export function ProfileCard({ title, handle, imageSrc }) { //destructuring
   return (
     <div>
+      <img src={imageSrc} alt='png logo' />
       <div>Title is {title}</div>
       <div>Handle is {handle}</div>
     </div>
