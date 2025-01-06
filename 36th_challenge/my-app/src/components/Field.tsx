@@ -1,6 +1,4 @@
 import React from "react";
-import { Flower } from "../../public/svg/flower";
-
 // Typ dla właściwości komponentu Field
 interface FieldProps {
   value: string; // Wartość w polu tekstowym
