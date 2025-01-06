@@ -7,7 +7,7 @@
 //   )
 // }
 
-export function ProfileCard({ title, handle, imageSrc }) { //destructuring
+export function ProfileCard({ title, handle, imageSrc, description }) { //destructuring
   return (
     <div className="card">
       <div className="card-image">
@@ -20,6 +20,9 @@ export function ProfileCard({ title, handle, imageSrc }) { //destructuring
         <div className="media-content">
           <p className="title is-4">{title}</p>
           <p className="subtitle is-6">{handle}</p>
+        </div>
+        <div className="content">
+          {description}
         </div>
       </div>
     </div>
