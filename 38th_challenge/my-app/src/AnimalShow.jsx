@@ -1,5 +1,5 @@
-export function AnimqlShow() {
+export function AnimalShow({ type }) {
   return (
-    <div></div>
+    <div>{type}</div>
   )
 }
