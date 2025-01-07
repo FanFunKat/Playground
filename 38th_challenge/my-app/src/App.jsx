@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimalShow } from "./AnimalShow";
+import styles from './App.module.css';
 
 function getRandomAnimal() {
   const animals = ['dog', 'cat', 'cow', 'bird', 'gator', 'horse'];
@@ -18,9 +19,9 @@ function App() {
   })
 
   return (
-    <div>
-      <button onClick={handleClick}>Add Animal</button>
-      <div>{renderedAnimals}</div>
+    <div className={styles.app}>
+      <button onClick={handleClick} >Add Animal</button>
+      <div className={styles.animalList}>{renderedAnimals}</div>
     </div>
   )
 }
