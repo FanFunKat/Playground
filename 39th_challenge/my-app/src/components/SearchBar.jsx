@@ -1,13 +1,17 @@
 export function SearchBar({ onSubmit }) {
 
-  const handleClick = () => {
-    onSubmit('cars')
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // console.log('I need to tell the parent about some data')
+    onSubmit('cars');
   }
+
 
   return (
     <div>
-      <input />
-      <button onClick={handleClick}>Submit</button>
+      <form onSubmit={handleFormSubmit}>
+        <input />
+      </form>
     </div>
   )
 }
