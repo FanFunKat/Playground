@@ -1,5 +1,7 @@
-export function ImageShow() {
+export function ImageShow({ image }) {
   return (
-    <div>Lol image show</div>
+    <div>
+      <img src={image.urls.small} alt={image.alt_description} />
+    </div>
   )
 }

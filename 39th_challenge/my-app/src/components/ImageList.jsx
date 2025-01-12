@@ -1,5 +1,10 @@
+import { ImageShow } from "./ImageShow"
+
 export function ImageList({ images }) {
+  const renderImages = images.map((image) => {
+    return <ImageShow image={image} key={image.id} />
+  })
   return (
-    <div>Lol image list: {images.length}</div>
+    <div>{renderImages}</div>
   )
 }
