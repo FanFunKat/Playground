@@ -1,5 +1,5 @@
-export function ImageList() {
+export function ImageList({ images }) {
   return (
-    <div>Lol image list</div>
+    <div>Lol image list: {images.length}</div>
   )
 }
