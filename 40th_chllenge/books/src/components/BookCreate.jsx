@@ -13,11 +13,12 @@ export function BookCerate({ onCreate }) {
   }
 
   return (
-    <div>
+    <div className="book-create">
+      <h3>Add a Book</h3>
       <form onSubmit={handleSubmit}>
         <label>Title</label>
-        <input value={title} onChange={handleChange} />
-        <button>Add New Book!</button>
+        <input className="input" value={title} onChange={handleChange} />
+        <button className="button">Add!</button>
       </form>
     </div>
   )
