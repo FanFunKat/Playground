@@ -1,5 +1,12 @@
-export function BookList() {
+import { BookShow } from "./BookShow"
+
+export function BookList({ books }) {
+
+  const renderBooks = books.map((book) => {
+    return <BookShow key={book.id} book={book} />
+  })
+
   return (
-    <div>Book list</div>
+    <div className="book-list">{renderBooks}</div>
   )
 }
