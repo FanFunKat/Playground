@@ -1,9 +1,9 @@
 import { BookShow } from "./BookShow"
 
-export function BookList({ books }) {
+export function BookList({ books, onDelete }) {
 
   const renderBooks = books.map((book) => {
-    return <BookShow key={book.id} book={book} />
+    return <BookShow onDelete={onDelete} key={book.id} book={book} />
   })
 
   return (
