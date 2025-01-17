@@ -25,6 +25,9 @@ export function BookShow({ book, onDelete, onEdit }) {
 
   return (
     <div className="book-show">
+      <img
+        alt="books"
+        src="https://picsum.photos/300/200" />
       <div>{content}</div>
       <div className="actions">
         <button className="edit" onClick={handleEditClick}>
