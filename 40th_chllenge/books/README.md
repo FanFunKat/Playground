@@ -6,5 +6,7 @@
 - Editing book titles
 
 ## Project divided into stages.
-### Stage one: 
+### Stage one:
 Developing the application using only `useState` and props.
+### Stage two:
+Developing the application using axios  and `useEffect`.
