@@ -10,3 +10,5 @@
 Developing the application using only `useState` and props.
 ### Stage two:
 Developing the application using axios  and `useEffect`.
+### Stage three:
+Developing the application using `useContext`.

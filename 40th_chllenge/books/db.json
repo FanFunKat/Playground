@@ -1,8 +1,12 @@
 {
   "books": [
     {
-      "title": "Alicja w krainie czarów",
+      "title": "Hobbit",
       "id": 1
+    },
+    {
+      "title": "Harry Potter",
+      "id": 2
     }
   ]
 }
