@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     fetchBooks();
-  }, []); // eslint-don't follow it here becouse you end up in infinite loop
+  }, [fetchBooks]);
 
   return (
     <div className="app">
