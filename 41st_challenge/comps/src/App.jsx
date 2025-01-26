@@ -1,7 +1,15 @@
-import './App.css'
+import { Button } from './components/Button'
 
 function App() {
-  return <div>hi 41</div>
+  return (
+    <>
+      <div><Button /></div>
+      <div><Button /></div>
+      <div><Button /></div>
+      <div><Button /></div>
+      <div><Button /></div>
+    </>
+  );
 }
 
 export default App
