@@ -7,7 +7,7 @@ function App() {
       <div><Button secondary>Secondary</Button></div>
       <div><Button success>Success</Button></div>
       <div><Button warning>Warning</Button></div>
-      <div><Button danger>Danger</Button></div>
+      <div><Button danger outline>Danger</Button></div>
     </>
   );
 }
