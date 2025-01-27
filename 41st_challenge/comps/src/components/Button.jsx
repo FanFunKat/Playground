@@ -10,7 +10,7 @@ export function Button({
   rounded,
   outline
 }) {
-  return <button>{children}</button>
+  return <button className="py-1.5 px-3 border border-blue-600 bg-blue-500 text-white">{children}</button>
 }
 
 Button.propTypes = {
