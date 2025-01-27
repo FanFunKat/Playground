@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import { classnames } from 'tailwindcss-classnames';
 
 export function Button({
   children,
@@ -10,7 +10,21 @@ export function Button({
   rounded,
   outline
 }) {
-  return <button className="py-1.5 px-3 border border-blue-600 bg-blue-500 text-white">{children}</button>
+  const classes = classnames(
+    'py-1.5 px-3 border', {
+    'border-blue-500 bg-blue-500 text-white': primary,
+    'border-gray-500 bg-gray-500 text-white': secondary,
+    'border-green-500 bg-green-500 text-white': success,
+    'border-yellow-500 bg-yellow-500 text-white': warning,
+    'border-red-500 bg-red-500 text-white': danger,
+    'rounded-lg': rounded,
+    'rounded-none': !rounded,
+    'bg-white text-black': outline
+  }
+  )
+
+
+  return <button className={classes}>{children}</button>
 }
 
 Button.propTypes = {
