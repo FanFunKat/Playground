@@ -9,7 +9,8 @@ export function Button({
   warning,
   danger,
   rounded,
-  outline
+  outline,
+  ...rest
 }) {
   const classes = twMerge(
     classnames(
@@ -26,12 +27,11 @@ export function Button({
       'text-green-500': outline && success,
       'text-yellow-400': outline && warning,
       'text-red-500': outline && danger,
-    }
-    )
+    })
   );
 
 
-  return <button className={classes}>{children}</button>
+  return <button {...rest} className={classes}>{children}</button>
 }
 
 Button.propTypes = {

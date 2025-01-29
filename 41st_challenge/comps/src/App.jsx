@@ -1,7 +1,6 @@
 import { Button } from './components/Button'
 import { GoBell, GoAlert, GoThumbsup } from "react-icons/go";
 
-
 function App() {
   return (
     <>
