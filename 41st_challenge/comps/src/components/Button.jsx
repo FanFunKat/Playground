@@ -14,6 +14,7 @@ export function Button({
 }) {
   const classes = twMerge(
     classnames(
+      rest.className,
       'flex items-center py-1.5 px-3 border', {
       'border-blue-500 bg-blue-500 text-white': primary,
       'border-gray-900 bg-gray-900 text-white': secondary,
