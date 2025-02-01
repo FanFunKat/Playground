@@ -8,13 +8,12 @@ export function Accordion({ items }) {
   };
 
   const renderedItems = items.map((item, index) => {
-    const isActive = index === activeIndex ? "active" : "";
+    const isActive = index === activeIndex;
 
     return (
       <div key={item.id}>
         <div>{item.label}</div>
-        <div>{item.content}</div>
-
+        {isActive && <div>{item.content}</div>}
       </div>
     );
   });
