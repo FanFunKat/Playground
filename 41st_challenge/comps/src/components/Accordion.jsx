@@ -5,13 +5,17 @@ export function Accordion({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (nextIndex) => {
-    setActiveIndex(nextIndex);
+    if (activeIndex === nextIndex) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(nextIndex);
+    }
   };
 
   const renderedItems = items.map((item, index) => {
     const isActive = index === activeIndex;
 
-    const icon = <span className="text-2xl">
+    const icon = <span className="text-xl">
       {isActive ? <GoChevronDown /> : <GoChevronLeft />}
     </span>
 
