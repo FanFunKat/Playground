@@ -11,23 +11,23 @@ export function Accordion({ items }) {
   const renderedItems = items.map((item, index) => {
     const isActive = index === activeIndex;
 
-    const icon = <span>
+    const icon = <span className="text-2xl">
       {isActive ? <GoChevronDown /> : <GoChevronLeft />}
     </span>
 
     return (
       <div key={item.id}>
-        <div onClick={() => handleClick(index)}>
+        <div className="flex justify-between p-3 bg-gray-50 border-b item-center cursor-pointer" onClick={() => handleClick(index)}>
           {item.label}
           {icon}
         </div>
-        {isActive && <div>{item.content}</div>}
+        {isActive && <div className="border-b p-5">{item.content}</div>}
       </div>
     );
   });
 
   return (
-    <div>
+    <div className="border-x border-t rounded">
       {renderedItems}
     </div>
   );
