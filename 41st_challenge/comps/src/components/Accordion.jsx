@@ -5,11 +5,12 @@ export function Accordion({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (nextIndex) => {
-    if (activeIndex === nextIndex) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(nextIndex);
-    }
+    setActiveIndex((currentActiveIndex) => {
+      if (currentActiveIndex === nextIndex) {
+        return null;
+      }
+      return nextIndex;
+    });
   };
 
   const renderedItems = items.map((item, index) => {
