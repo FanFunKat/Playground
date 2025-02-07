@@ -1,7 +1,7 @@
-import classNames from 'classnames';
+import { classnames } from 'tailwindcss-classnames';
 
 export function Panel({ children, className, ...rest }) {
-  const finalClassNames = classNames(
+  const finalClassNames = classnames(
     'border rounded p-3 shadow bg-white w-full',
     className
   );
