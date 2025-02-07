@@ -28,7 +28,7 @@ export function Dropdown({ options, value, onChange }) {
         {value?.label || 'Select...'}
         <GoChevronDown className='text-lg' />
       </div>
-      {isOpen && <div className='absolute top-full rounded p-3 shadow bg-white w-full'>{renderedOptions}</div>}
+      {isOpen && <div className='absolute top-full border rounded p-3 shadow bg-white w-full'>{renderedOptions}</div>}
     </div>
   );
 }
