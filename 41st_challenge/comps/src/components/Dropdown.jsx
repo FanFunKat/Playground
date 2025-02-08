@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { GoChevronDown } from "react-icons/go";
 import { Panel } from './Panel';
 
@@ -6,11 +6,25 @@ import { Panel } from './Panel';
 export function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false)
 
+  useEffect(() => {
+    const handler = (event) => {
+      console.log(event.target);
+    };
+
+    document.addEventListener('click', handler, true);
+
+    return () => {
+      document.removeEventListener('click', handler);
+    }
+  }, [])
+
   const handleClick = () => {
     setIsOpen((currentIsOpen) => !currentIsOpen);
   }
 
+  window.timeTwo = performance.now();
   const handelOptionClick = (option) => {
+    window.timeOne = performance.now();
     setIsOpen(false);
     onChange(option);
   }
