@@ -2,6 +2,8 @@ import { Button } from '../components/Button'
 import { GoBell, GoAlert, GoThumbsup } from "react-icons/go";
 
 export function ButtonPage() {
+  const handleClick = () => { };
+
   return (
     <>
       <div>

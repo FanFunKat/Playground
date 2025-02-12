@@ -1,7 +1,11 @@
-import { useContext } from "react";
-import NavigationContext from "../context/navigation";
+import classnames from 'tailwindcss-classnames';
+import { useNavigation } from '../hooks/use-navigation';
 
 export function Link({ to, children }) {
+  const { navigate } = useNavigation();
+
+  const classes = classnames('text-blue-500', 'hover:text-blue-800');
+
   const handleClick = (e) => {
     if (e.metaKey || e.ctrlKey) {
       return;
@@ -10,10 +14,8 @@ export function Link({ to, children }) {
     navigate(to);
   }
 
-  const { navigate } = useContext(NavigationContext);
-
   return (
-    <a onClick={handleClick} href={to}>
+    <a className={classes} onClick={handleClick} href={to}>
       {children}
     </a>
   );
