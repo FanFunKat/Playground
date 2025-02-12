@@ -1,10 +1,14 @@
 import classnames from 'tailwindcss-classnames';
 import { useNavigation } from '../hooks/use-navigation';
 
-export function Link({ to, children }) {
-  const { navigate } = useNavigation();
+export function Link({ to, children, className, activeClassName }) {
+  const { navigate, currentPath } = useNavigation();
 
-  const classes = classnames('text-blue-500', 'hover:text-blue-800');
+  const classes = classnames(
+    'text-blue-500',
+    className,
+    currentPath === to && activeClassName
+  );
 
   const handleClick = (e) => {
     if (e.metaKey || e.ctrlKey) {
