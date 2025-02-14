@@ -13,14 +13,14 @@ export function ModalPage() {
     setShowModal(false);
   };
 
-  const handleClose = () => {
-    setShowModal(false);
-  };
+  // const handleClose = () => {
+  //   setShowModal(false);
+  // };
 
   return (
     <div>
       <Button onClick={handleClick} primary >Open Modal</Button>
-      {showModal && <Modal onClose={handleClose} />}
+      {showModal && <Modal />}
     </div>
   );
 }
