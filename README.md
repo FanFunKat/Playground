@@ -79,3 +79,17 @@ Small and larger projects related to various educational platforms. So that I wo
 34th challenge - Web Framwork - TS
 
 35th challenge - Express + TypeScript integration: Log on / Log out form; decorators
+
+### REACT
+
+36th challenge
+
+37th challenge 
+
+38th challenge 
+
+39th challenge 
+
+40th challenge 
+
+41st challenge - building components
