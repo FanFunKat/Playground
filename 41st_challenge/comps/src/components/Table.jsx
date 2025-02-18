@@ -1,7 +1,27 @@
-export function Table() {
+export function Table({ data }) {
+
+  const renderedRows = data.map((fruit) => {
+    return (
+      <tr key={fruit.name}>
+        <td>{fruit.name}</td>
+        <td>{fruit.color}</td>
+        <td>{fruit.score}</td>
+      </tr>
+    );
+  });
+
   return (
-    <div>
-      <h1>Table</h1>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {renderedRows}
+      </tbody>
+    </table>
   );
 }
