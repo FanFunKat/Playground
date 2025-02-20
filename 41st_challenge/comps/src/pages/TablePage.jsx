@@ -10,7 +10,7 @@ export function TablePage() {
 
   const config = [
     {
-      label: 'Fruits',
+      label: 'Name',
       render: (fruit) => fruit.name,
       sortValue: (fruit) => fruit.name
     },
