@@ -10,6 +10,7 @@ export function TablePage() {
 
   const config = [
     {
+      header: () => <th className="bg-red-500">Name</th>,
       label: 'Name',
       render: (fruit) => fruit.name,
       sortValue: (fruit) => fruit.name
@@ -19,6 +20,7 @@ export function TablePage() {
       render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`}></div>
     },
     {
+      header: () => <th className="bg-red-500">Score</th>,
       label: 'Score',
       render: (fruit) => fruit.score,
       sortValue: (fruit) => fruit.score
