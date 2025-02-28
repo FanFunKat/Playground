@@ -4,31 +4,36 @@ import { Panel } from '../components/Panel';
 
 const INCREMENT_COUNT = "increment-count"
 const DECREMENT_COUNT = "decrement-count"
-const CHANGE_VALUE = "changr-value"
+const CHANGE_VALUE = "change-value"
 const SUBMIT_VALUE = "submit-value"
 
 const reducer = (state, action) => {
-  if (action.type === INCREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count + 1
-    };
-  } else if (action.type === DECREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count - 1
-    };
+  switch (action.type) {
+    case INCREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count + 1
+      };
+    case DECREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count - 1
+      };
+    case CHANGE_VALUE:
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
+    case SUBMIT_VALUE:
+      return {
+        ...state,
+        count: state.count + state.valueToAdd,
+        valueToAdd: 0
+      }
+    default:
+      throw new Error("unexpected action type" + action.type)
   }
-
-  if (action.type === CHANGE_VALUE) {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    };
-  }
-
-  return state;
-}
+};
 
 export function CounterPage({ initialCount }) {
   // const [count, setCount] = useState(initialCount);
