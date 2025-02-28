@@ -4,6 +4,7 @@ import { Panel } from '../components/Panel';
 
 export function CounterPage({ initialCount }) {
   const [count, setCount] = useState(initialCount);
+  const [valueToAdd, setVAlueToAdd] = useState(0);
 
   useEffect(() => {
     console.log(count);
@@ -15,6 +16,11 @@ export function CounterPage({ initialCount }) {
 
   const decrement = () => {
     setCount(count - 1);
+  };
+
+  const handleChange = (event) => {
+    const value = parseInt(event.target.value) || 0;
+    setVAlueToAdd(value);
   };
 
   return (
@@ -31,7 +37,7 @@ export function CounterPage({ initialCount }) {
 
       <form>
         <label>Add a lot!</label>
-        <input className='p-1 m-3 bg-gray-50 border border-gray-300' type='number' value={count} onChange={(e) => setCount(parseInt(e.target.value))} />
+        <input className='p-1 m-3 bg-gray-50 border border-gray-300' type='number' value={valueToAdd || ""} onChange={handleChange} />
         <Button>Add it!</Button>
       </form>
     </Panel>
