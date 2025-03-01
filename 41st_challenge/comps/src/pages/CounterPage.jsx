@@ -1,6 +1,7 @@
 import { Button } from '../components/Button';
 import { useReducer } from 'react';
 import { Panel } from '../components/Panel';
+import { produce } from 'immer';
 
 const INCREMENT_COUNT = "increment-count"
 const DECREMENT_COUNT = "decrement-count"
@@ -10,35 +11,27 @@ const SUBMIT_VALUE = "submit-value"
 const reducer = (state, action) => {
   switch (action.type) {
     case INCREMENT_COUNT:
-      return {
-        ...state,
-        count: state.count + 1
-      };
+      state.count = state.count + 1;
+      return;
     case DECREMENT_COUNT:
-      return {
-        ...state,
-        count: state.count - 1
-      };
+      state.count = state.count - 1
+      return;
     case CHANGE_VALUE:
-      return {
-        ...state,
-        valueToAdd: action.payload,
-      };
+      state.valueToAdd = action.payload;
+      return;
     case SUBMIT_VALUE:
-      return {
-        ...state,
-        count: state.count + state.valueToAdd,
-        valueToAdd: 0
-      }
+      state.count = state.count + state.valueToAdd;
+      state.valueToAdd = 0;
+      return;
     default:
-      throw new Error("unexpected action type" + action.type)
+      return;
   }
 };
 
 export function CounterPage({ initialCount }) {
   // const [count, setCount] = useState(initialCount);
   // const [valueToAdd, setVAlueToAdd] = useState(0);
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(produce(reducer), {
     count: initialCount,
     valueToAdd: 0
   });
