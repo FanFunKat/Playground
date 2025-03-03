@@ -81,15 +81,15 @@ Small and larger projects related to various educational platforms. So that I wo
 35th challenge - Express + TypeScript integration: Log on / Log out form; decorators
 
 ### REACT
+ 
+36th challenge - translator app, but I don't have API for Google https://translation.googleapis.com/language/translate/v2?key=${API_KEY}", so it won't work :(translate app, but i don't have API for google https://translation.googleapis.com/language/translate/v2?key=${API_KEY}" so it won't work :(
 
-36th challenge
+37th challenge - Personal Digital Assistants, bulma for styling
 
-37th challenge 
+38th challenge - adding random pictures and giving likes
 
-38th challenge 
+39th challenge - image search engine based on word, API unsplash
 
-39th challenge 
+40th challenge - book list, app to add read books, JSON server, axios
 
-40th challenge 
-
-41st challenge - building components
+41st challenge - building blocks, lots of stuff. Details in ReadMe in challenge 41
