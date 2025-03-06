@@ -4,7 +4,12 @@ const songsSlice = createSlice({
   name: 'songs',
   initialState: [],
   reducers: {
+    //PATERN: 'song' + 'addSong' = 'song/addSong'
     addSong: (state, action) => {
+      //STATE IS NOT THE BIG STATE OBJECT
+      //IN THE STORE
+      //IT IS THE PIECE OF STATE MANAGED
+      //BY THIS REDUCER
       state.push(action.payload);
     },
     removeSong: (state, action) => {
@@ -20,13 +25,15 @@ const store = configureStore({
   },
 });
 
+// console.log(songsSlice.actions.addSong('some song'));
+//action creators
+
 const startingState = store.getState();
 console.log('Starting state:', JSON.stringify(startingState));
 
-store.dispatch({
-  type: 'songs/addSong',
-  payload: 'New Song!!!',
-})
+store.dispatch(
+  songsSlice.actions.addSong('Some song')
+)
 
 const endingState = store.getState();
 console.log('Ending state:', JSON.stringify(endingState));
