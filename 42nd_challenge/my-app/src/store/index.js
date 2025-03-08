@@ -39,3 +39,4 @@ const store = configureStore({
 // console.log('Ending state:', JSON.stringify(endingState));
 
 export { store };
+export const { addSong, removeSong } = songsSlice.actions;
