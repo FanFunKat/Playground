@@ -4,13 +4,14 @@ const moviesSlice = createSlice({
   name: 'movie',
   initialState: [],
   reducers: {
-    addMovie: (state, action) =>
+    addMovie: (state, action) => {
       state.push(action.payload)
+    },
+    removeMovie: (state, action) => {
+      const index = state.indexOf(action.payload);
+      state.splice(index, 1)
+    }
   },
-  removeMovie: (state, action) => {
-    const index = state.indexOf(action.payload);
-    state.splice(index, 1)
-  }
 });
 
 const songsSlice = createSlice({
