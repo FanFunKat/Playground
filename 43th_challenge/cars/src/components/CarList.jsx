@@ -1,10 +1,7 @@
-function App() {
+export function CarList() {
   return (
     <div>
       <h1>Car List</h1>
-      <CarList />
     </div>
   )
 }
-
-export default App
