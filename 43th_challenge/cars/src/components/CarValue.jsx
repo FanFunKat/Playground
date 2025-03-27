@@ -5,12 +5,14 @@ export function CarValue() {
     const filteredCars = data.filter((car) => {
       return car.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    let cost = 0;
-    filteredCars.forEach((car) => {
-      cost += car.cost;
-    });
+    // let cost = 0;
+    // filteredCars.forEach((car) => {
+    //   cost += car.cost;
+    // });
 
-    return cost;
+    // return cost;
+
+    return filteredCars.reduce((acc, car) => acc + car.cost, 0);
   });
 
   return (
