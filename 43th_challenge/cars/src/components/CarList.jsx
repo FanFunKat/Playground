@@ -11,16 +11,9 @@ const memorizedCars = createSelector(
 );
 
 export function CarList() {
-
   const dispatch = useDispatch();
   const cars = useSelector(memorizedCars);
   const name = useSelector((state) => state.form.name);
-
-  // const cars = useSelector(({ cars: { data, searchTerm } }) => {
-  //   return data.filter((car) =>
-  //     car.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //   )
-  // });
 
   const handleCarDelete = (car) => {
     dispatch(removeCar(car.id));
@@ -29,7 +22,7 @@ export function CarList() {
   const renderedCars = cars.map(car => {
     const bold = name && car.name.toLowerCase().includes(name.toLowerCase()) ? 'bold' : '';
     return (
-      <div key={car.id} className={`panel ${bold && 'bold'}`}>
+      <div key={car.id} className={`panel ${bold}`}>
         <p> {car.name} - ${car.cost}</p>
         <button
           className='button is-danger'
@@ -39,12 +32,12 @@ export function CarList() {
         </button>
       </div>
     )
-  })
+  });
 
   return (
     <div className='car-list'>
       {renderedCars}
       <hr />
     </div>
-  )
+  );
 }
