@@ -93,3 +93,9 @@ Small and larger projects related to various educational platforms. So that I wo
 40th challenge - book list, app to add read books, JSON server, axios
 
 41st challenge - building blocks, lots of stuff. Details in ReadMe in challenge 41
+
+42nd challenge - movie playlist / song playlist
+
+43th challenge - adding new cars and their prices, displaying a list of added cars, searching, displaying duplicates
+
+44th challenge - 
