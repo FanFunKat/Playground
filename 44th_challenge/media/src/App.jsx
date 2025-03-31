@@ -1,7 +1,12 @@
+import { UsersList } from "./components/UsersList";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className="container mx-auto text-red-500
+">
+      <UsersList />
     </div>
   );
 }
+
+export default App;
