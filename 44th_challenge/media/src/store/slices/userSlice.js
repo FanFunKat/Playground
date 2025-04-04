@@ -9,9 +9,17 @@ const userSlice = createSlice({
     error: null,
   },
   extraReducers(builder) {
-    builder.addCase(fetchUsers.pending);
-    builder.addCase('');
-    builder.addCase('');
+    builder.addCase(fetchUsers.pending, (stste, action) => {
+      stste.isLoading = true;
+    });
+    builder.addCase(fetchUsers.fulfilled, (stste, action) => {
+      stste.isLoading = false;
+      stste.data = action.payload;
+    });
+    builder.addCase(fetchUsers.rejected, (stste, action) => {
+      stste.isLoading = false;
+      stste.error = action.error;
+    });
   }
 });
 
