@@ -1,4 +1,4 @@
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store";
 
@@ -13,10 +13,12 @@ export function UsersList() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error fetching data...</div>;
   }
-  return <div>{data.length}</div>
+
+  return <div>{data.length}</div>;
 
   // return 'Users List';
 }
