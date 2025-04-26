@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store";
+import { Sceleton } from "./Sceleton";
 
 export function UsersList() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export function UsersList() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Sceleton times={6} className='h-10 w-full' />;
   }
 
   if (error) {
