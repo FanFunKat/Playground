@@ -19,7 +19,15 @@ export function UsersList() {
     return <div>Error fetching data...</div>;
   }
 
-  return <div>{data.length}</div>;
+  const renderUsers = data.map((user) => {
+    return <div key={user.id} className="mb-2 px-3 py-1 text-lg bg-gray-50 border rounded">
+      <div className="flex p-2 justify-between items-center cursor-pointer">
+        {user.name}
+      </div>
+    </div>
+  });
+
+  return <div>{renderUsers}</div>;
 
   // return 'Users List';
 }
