@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../store";
+import { fetchUsers, addUser } from "../store";
+import Button from "./Button";
 import { Sceleton } from "./Sceleton";
 
 export function UsersList() {
@@ -10,6 +11,10 @@ export function UsersList() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
+
+  const handleUserAdd = () => {
+    dispatch(addUser());
+  }
 
   if (isLoading) {
     return <Sceleton times={6} className='h-10 w-full' />;
@@ -27,7 +32,15 @@ export function UsersList() {
     </div>
   });
 
-  return <div>{renderUsers}</div>;
+  return (
+    <div>
+      <div className="flex flex-row justify-between m-3 items-center">
+        <h1 className="m-2 text-xl">Users</h1>
+        <Button primary onClick={handleUserAdd}>+ Add User</Button>
+      </div>
+      {renderUsers}
+    </div>
+  );
 
   // return 'Users List';
 }
