@@ -49,7 +49,12 @@ export function UsersList() {
     <div>
       <div className="flex flex-row justify-between m-3 items-center">
         <h1 className="m-2 text-xl">Users</h1>
-        <Button primary onClick={handleUserAdd}>+ Add User</Button>
+        {
+          isCreatingUser
+            ? 'Creating user...'
+            : <Button primary onClick={handleUserAdd}>+ Add User</Button>
+        }
+        {creatingUserError && 'Error creating user...'}
       </div>
       {renderUsers}
     </div>
