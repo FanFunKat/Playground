@@ -7,6 +7,8 @@ import { Sceleton } from "./Sceleton";
 export function UsersList() {
   const [isLoadingUsers, setIsLoadingUsers] = useState(false);
   const [loadingUsersError, setLoadingUsersError] = useState(null);
+  const [isCreatingUser, setIsCreatingUser] = useState(false);
+  const [creatingUserError, setCreatingUserError] = useState(null);
 
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.users);
@@ -20,7 +22,11 @@ export function UsersList() {
   }, [dispatch]);
 
   const handleUserAdd = () => {
-    dispatch(addUser());
+    setIsCreatingUser(true);
+    dispatch(addUser())
+      .unwrap()
+      .catch((err) => setCreatingUserError(err))
+      .finally(() => setIsCreatingUser(false));
   }
 
   if (isLoadingUsers) {
